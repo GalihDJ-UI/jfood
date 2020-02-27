@@ -12,10 +12,16 @@ public class Seller
     private String name;
     private String email;
     private String phoneNumber;
-   
-    public Seller()
+    private Location location;
+    
+    public Seller(int id, String name, String email, String phoneNumber, 
+    Location location)
     {
-        
+      this.id = id;
+      this.name = name;
+      this.email = email;
+      this.phoneNumber = phoneNumber;
+      this.location = location;
     }
 
     /**
@@ -27,41 +33,46 @@ public class Seller
     public int getId()
     {
         // put your code here
-        return 0;
+        return id;
     }
     
     public String getName()
     {
-     return "Oke";
+     return name;
     }
     
     public String getEmail()
     {
-     return "Oke";
+     return email;
     }
     
     public String getPhoneNumber()
     {
-     return "Oke";
+     return phoneNumber;
     }
     
     public void setId(int id)
     {
-     
+     this.id = id;
     }
     
     public void setName(String name)
     {
-     
+     this.name = name;
     }
     
     public void setEmail(String email)
     {
-     
+     this.email = email;
     }
     
-    public void setPhoneNumber(String phoneNumber )
+    public void setPhoneNumber(String phoneNumber)
     {
-     
+     this.phoneNumber = phoneNumber;
+    }
+    
+    public void printData()
+    {
+     System.out.println(name);   
     }
 }

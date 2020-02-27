@@ -12,12 +12,18 @@ public class Food
     private String name;
     private int price;
     private String category;
+    private Seller seller;
     /**
      * Constructor for objects of class Food
      */
-    public Food()
+    public Food(int id, String name, Seller seller, int price, String category)
     {
         // initialise instance variables
+        this.id = id;
+        this.name = name;
+        this.seller = seller;
+        this.price = price;
+        this.category = category;
     }
 
     /**
@@ -29,48 +35,65 @@ public class Food
     public int getId()
     {
         // put your code here
-        return 0;
+        return id;
     }
     
     public String getName()
     {
         // put your code here
-        return "Oke";
+        return name;
+    }
+    
+    public Seller getSeller()
+    {
+        // put your code here
+        return seller;
     }
     
     public int getPrice()
     {
         // put your code here
-        return 0;
+        return price;
     }
     
     public String getCategory()
     {
         // put your code here
-        return "Oke";
+        return category;
     }
     
     public void setId(int id)
     {
         // put your code here
-        return;
+        this.id = id;
     }
     
     public void setName(String name)
     {
         // put your code here
-        return;
+        this.name = name;
+    }
+    
+    public void setSeller(Seller seller)
+    {
+        // put your code here
+        this.seller = seller;
     }
     
     public void setPrice(int price)
     {
         // put your code here
-        return;
+        this.price = price;
     }
     
     public void setCategory(String category)
     {
         // put your code here
-        return;
+        this.category = category;
+    }
+    
+    public void printData()
+    {
+        return;   
     }
 }
