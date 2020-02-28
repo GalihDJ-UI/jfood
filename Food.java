@@ -154,6 +154,6 @@ public class Food
      */
     public void printData()
     {
-        return;   
+      System.out.println(name);  
     }
 }

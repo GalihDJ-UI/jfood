@@ -43,18 +43,46 @@ Constructing Javadoc information...
 Standard Doclet version 11.0.2
 Building tree for all the packages and classes...
 Generating D:\Tugas\Kuliah\Semester 6\OOP\BlueJ Project\jfood\doc\Customer.html...
-D:\Tugas\Kuliah\Semester 6\OOP\BlueJ Project\jfood\Customer.java:34: warning - @param argument "y" is not a parameter name.
+D:\Tugas\Kuliah\Semester 6\OOP\BlueJ Project\jfood\Customer.java:93: warning - @return tag cannot be used in method with void return type.
+D:\Tugas\Kuliah\Semester 6\OOP\BlueJ Project\jfood\Customer.java:104: warning - @return tag cannot be used in method with void return type.
+D:\Tugas\Kuliah\Semester 6\OOP\BlueJ Project\jfood\Customer.java:115: warning - @return tag cannot be used in method with void return type.
+D:\Tugas\Kuliah\Semester 6\OOP\BlueJ Project\jfood\Customer.java:126: warning - @return tag cannot be used in method with void return type.
+D:\Tugas\Kuliah\Semester 6\OOP\BlueJ Project\jfood\Customer.java:137: warning - @return tag cannot be used in method with void return type.
+D:\Tugas\Kuliah\Semester 6\OOP\BlueJ Project\jfood\Customer.java:145: warning - @param argument "Variable" is not a parameter name.
+D:\Tugas\Kuliah\Semester 6\OOP\BlueJ Project\jfood\Customer.java:148: warning - @return tag cannot be used in method with void return type.
 Generating D:\Tugas\Kuliah\Semester 6\OOP\BlueJ Project\jfood\doc\DatabaseFood.html...
-D:\Tugas\Kuliah\Semester 6\OOP\BlueJ Project\jfood\DatabaseFood.java:24: warning - @param argument "y" is not a parameter name.
 Generating D:\Tugas\Kuliah\Semester 6\OOP\BlueJ Project\jfood\doc\Food.html...
-D:\Tugas\Kuliah\Semester 6\OOP\BlueJ Project\jfood\Food.java:32: warning - @param argument "y" is not a parameter name.
+D:\Tugas\Kuliah\Semester 6\OOP\BlueJ Project\jfood\Food.java:95: warning - @return tag cannot be used in method with void return type.
+D:\Tugas\Kuliah\Semester 6\OOP\BlueJ Project\jfood\Food.java:107: warning - @return tag cannot be used in method with void return type.
+D:\Tugas\Kuliah\Semester 6\OOP\BlueJ Project\jfood\Food.java:119: warning - @return tag cannot be used in method with void return type.
+D:\Tugas\Kuliah\Semester 6\OOP\BlueJ Project\jfood\Food.java:131: warning - @return tag cannot be used in method with void return type.
+D:\Tugas\Kuliah\Semester 6\OOP\BlueJ Project\jfood\Food.java:143: warning - @return tag cannot be used in method with void return type.
+D:\Tugas\Kuliah\Semester 6\OOP\BlueJ Project\jfood\Food.java:152: warning - @param argument "Variable" is not a parameter name.
+D:\Tugas\Kuliah\Semester 6\OOP\BlueJ Project\jfood\Food.java:155: warning - @return tag cannot be used in method with void return type.
 Generating D:\Tugas\Kuliah\Semester 6\OOP\BlueJ Project\jfood\doc\Invoice.html...
-D:\Tugas\Kuliah\Semester 6\OOP\BlueJ Project\jfood\Invoice.java:33: warning - @param argument "y" is not a parameter name.
+D:\Tugas\Kuliah\Semester 6\OOP\BlueJ Project\jfood\Invoice.java:96: warning - @return tag cannot be used in method with void return type.
+D:\Tugas\Kuliah\Semester 6\OOP\BlueJ Project\jfood\Invoice.java:108: warning - @return tag cannot be used in method with void return type.
+D:\Tugas\Kuliah\Semester 6\OOP\BlueJ Project\jfood\Invoice.java:120: warning - @return tag cannot be used in method with void return type.
+D:\Tugas\Kuliah\Semester 6\OOP\BlueJ Project\jfood\Invoice.java:132: warning - @return tag cannot be used in method with void return type.
+D:\Tugas\Kuliah\Semester 6\OOP\BlueJ Project\jfood\Invoice.java:144: warning - @return tag cannot be used in method with void return type.
+D:\Tugas\Kuliah\Semester 6\OOP\BlueJ Project\jfood\Invoice.java:153: warning - @param argument "Variable" is not a parameter name.
+D:\Tugas\Kuliah\Semester 6\OOP\BlueJ Project\jfood\Invoice.java:156: warning - @return tag cannot be used in method with void return type.
 Generating D:\Tugas\Kuliah\Semester 6\OOP\BlueJ Project\jfood\doc\JFood.html...
 Generating D:\Tugas\Kuliah\Semester 6\OOP\BlueJ Project\jfood\doc\Location.html...
-D:\Tugas\Kuliah\Semester 6\OOP\BlueJ Project\jfood\Location.java:29: warning - @param argument "y" is not a parameter name.
+D:\Tugas\Kuliah\Semester 6\OOP\BlueJ Project\jfood\Location.java:68: warning - @return tag cannot be used in method with void return type.
+D:\Tugas\Kuliah\Semester 6\OOP\BlueJ Project\jfood\Location.java:80: warning - @return tag cannot be used in method with void return type.
+D:\Tugas\Kuliah\Semester 6\OOP\BlueJ Project\jfood\Location.java:92: warning - @return tag cannot be used in method with void return type.
+D:\Tugas\Kuliah\Semester 6\OOP\BlueJ Project\jfood\Location.java:101: warning - @param argument "Variable" is not a parameter name.
+D:\Tugas\Kuliah\Semester 6\OOP\BlueJ Project\jfood\Location.java:104: warning - @return tag cannot be used in method with void return type.
 Generating D:\Tugas\Kuliah\Semester 6\OOP\BlueJ Project\jfood\doc\Seller.html...
-D:\Tugas\Kuliah\Semester 6\OOP\BlueJ Project\jfood\Seller.java:30: warning - @param argument "y" is not a parameter name.
+D:\Tugas\Kuliah\Semester 6\OOP\BlueJ Project\jfood\Seller.java:92: warning - @return tag cannot be used in method with void return type.
+D:\Tugas\Kuliah\Semester 6\OOP\BlueJ Project\jfood\Seller.java:103: warning - @return tag cannot be used in method with void return type.
+D:\Tugas\Kuliah\Semester 6\OOP\BlueJ Project\jfood\Seller.java:114: warning - @return tag cannot be used in method with void return type.
+D:\Tugas\Kuliah\Semester 6\OOP\BlueJ Project\jfood\Seller.java:125: warning - @return tag cannot be used in method with void return type.
+D:\Tugas\Kuliah\Semester 6\OOP\BlueJ Project\jfood\Seller.java:133: warning - @param argument "phoneNumber" is not a parameter name.
+D:\Tugas\Kuliah\Semester 6\OOP\BlueJ Project\jfood\Seller.java:136: warning - @return tag cannot be used in method with void return type.
+D:\Tugas\Kuliah\Semester 6\OOP\BlueJ Project\jfood\Seller.java:144: warning - @param argument "Variable" is not a parameter name.
+D:\Tugas\Kuliah\Semester 6\OOP\BlueJ Project\jfood\Seller.java:147: warning - @return tag cannot be used in method with void return type.
 Generating D:\Tugas\Kuliah\Semester 6\OOP\BlueJ Project\jfood\doc\package-summary.html...
 Generating D:\Tugas\Kuliah\Semester 6\OOP\BlueJ Project\jfood\doc\package-tree.html...
 Generating D:\Tugas\Kuliah\Semester 6\OOP\BlueJ Project\jfood\doc\constant-values.html...
@@ -69,4 +97,4 @@ Generating D:\Tugas\Kuliah\Semester 6\OOP\BlueJ Project\jfood\doc\allclasses.htm
 Generating D:\Tugas\Kuliah\Semester 6\OOP\BlueJ Project\jfood\doc\allclasses.html...
 Generating D:\Tugas\Kuliah\Semester 6\OOP\BlueJ Project\jfood\doc\index.html...
 Generating D:\Tugas\Kuliah\Semester 6\OOP\BlueJ Project\jfood\doc\help-doc.html...
-6 warnings
+34 warnings

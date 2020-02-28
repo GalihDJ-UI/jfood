@@ -155,6 +155,6 @@ public class Invoice
      */
     public void printData()
     {
-        return;   
+      System.out.println(totalPrice);  
     }
 }

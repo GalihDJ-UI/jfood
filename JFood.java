@@ -10,16 +10,18 @@ public class JFood
     // instance variables - replace the example below with your own
     public static void main(String[] args)
     {
-      Location location1 = new Location("Depok", "Jawa Barat", "Asik");
-      Seller seller1 = new Seller(21, "Budi", "budi@mail", "02179187676", 
+      Location location1 = new Location("Tanjung Priok", "Jakarta Utara", "Asik");
+      Seller seller1 = new Seller(21, "Galih", "galih@gmail.com", "02179187676", 
       location1);
-      Food foods = new Food(22, "Tempe", seller1, 2000, "Gorengan");
-      Customer customers = new Customer(23, "Bambang", "bambang@mail", "admin", 
+      Food food1 = new Food(22, "Tempe", seller1, 2000, "Gorengan");
+      Customer customer1 = new Customer(23, "Bambang", "bambang@gmail.com", "admin", 
       "29 Feb 2020");
-      Invoice invoice = new Invoice(24, 25, "1 Maret 2020", customers, 
-      2000);  
+      Invoice invoice = new Invoice(24, 25, "1 Maret 2020", customer1, 2000);  
       
-      location1.setProvince("Jawa Timur");
-      location1.printData();
+      
+      seller1.printData();
+      seller1.setName("Pascal");
+      seller1.printData();
+      food1.printData();
     }
 }
