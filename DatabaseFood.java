@@ -1,9 +1,9 @@
 
 /**
- * Write a description of class DatabaseFood here.
+ * Menyimpan database makanan.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Galih Damar Jati
+ * @version (27 Feb 2020)
  */
 public class DatabaseFood
 {
@@ -19,10 +19,9 @@ public class DatabaseFood
     }
 
     /**
-     * An example of a method - replace this comment with your own
+     * Mengambil input boolean untuk menambahkan food
      *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * @return false
      */
     public boolean addFood(Food food)
     {
@@ -30,16 +29,31 @@ public class DatabaseFood
       return false;
     }
     
+    /**
+     * Mengambil input boolean untuk menghapus food
+     *
+     * @return false
+     */
     public boolean removeFood(Food food)
     {
       return false;  
     }
     
-    public Food getFood(String province)
+    /**
+     * An example of a method - replace this comment with your own
+     *
+     * @return null
+     */
+    public Food getFood()
     {
       return null;
     }
     
+    /**
+     * Mengambil daftar makanan yang ada
+     *
+     * @return listFood
+     */
     public String[] getListFood()
     {
       return listFood;

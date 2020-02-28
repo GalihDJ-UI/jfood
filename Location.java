@@ -1,9 +1,9 @@
 
 /**
- * Write a description of class Location here.
+ * Menyimpan data lokasi.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Galih Damar Jati
+ * @version (27 Feb 2020)
  */
 public class Location
 {
@@ -14,6 +14,9 @@ public class Location
 
     /**
      * Constructor for objects of class Location
+     *@param city
+     *@param province
+     *@param description
      */
     public Location(String city, String province, String description)
     {
@@ -24,10 +27,9 @@ public class Location
     }
 
     /**
-     * An example of a method - replace this comment with your own
+     * Digunakan untuk mendapatkan nama provinsi
      *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * @return Isi variable province
      */
     public String getProvince()
     {
@@ -35,36 +37,70 @@ public class Location
         return province;
     }
     
+    /**
+     * Digunakan untuk mendapatkan nama kota
+     *
+     * @return Isi variable city
+     */
     public String getCity()
     {
         // put your code here
         return city;
     }
     
+    /**
+     * Digunakan untuk mendapatkan deskripsi lokasi
+     *
+     * @return Isi variable description
+     */
     public String getDescription()
     {
         // put your code here
         return description;
     }
     
+    /**
+     * Mengatur value dari variable province
+     *
+     * @param  province dengan tipe data string
+     * @return Value pada parameter dimasukkan ke variable province
+     */
     public void setProvince(String province)
     {
         // put your code here
         this.province = province;
     }
     
+    /**
+     * Mengatur value dari variable city
+     *
+     * @param  city dengan tipe data string
+     * @return Value pada parameter dimasukkan ke variable city
+     */
     public void setCity(String city)
     {
         // put your code here
         this.city = city;
     }
     
+    /**
+     * Mengatur value dari variable description
+     *
+     * @param  description dengan tipe data string
+     * @return Value pada parameter dimasukkan ke variable description
+     */
     public void setDescription(String description)
     {
         // put your code here
         this.description = description;
     }
     
+    /**
+     * Untuk print data variable pada class ini
+     *
+     * @param  Variable dengan input dari salah satu method setter di atas
+     * @return Isi dari variable yang ada. Tergantung pada variable apa yang dipanggil
+     */
     public void printData()
     {
         System.out.println(province);   

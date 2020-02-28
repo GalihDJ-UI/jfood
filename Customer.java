@@ -1,9 +1,9 @@
 
 /**
- * Write a description of class Customer here.
+ * Menyimpan data pelanggan.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Galih Damar Jati
+ * @version (27 Feb 2020)
  */
 public class Customer
 {
@@ -16,6 +16,11 @@ public class Customer
 
     /**
      * Constructor for objects of class Customer
+     *@param id
+     *@param name
+     *@param email
+     *@param password
+     *@param joinDate
      */
     public Customer(int id, String name, String email, String password, 
     String joinDate)
@@ -29,10 +34,9 @@ public class Customer
     }
 
     /**
-     * An example of a method - replace this comment with your own
+     * Digunakan untuk mendapatkan id pelanggan
      *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * @return Isi variable id
      */
     public int getId()
     {
@@ -40,51 +44,107 @@ public class Customer
         return id;
     }
     
+    /**
+     * Digunakan untuk mendapatkan nama pelanggan
+     *
+     * @return Isi variable name
+     */
     public String getName()
     {
      return name;
     }
     
+    /**
+     * Digunakan untuk mendapatkan email pelanggan
+     *
+     * @return Isi variable email
+     */
     public String getEmail()
     {
      return email;
     }
     
+    /**
+     * Digunakan untuk mendapatkan password pelanggan
+     *
+     * @return Isi variable password
+     */
     public String getPassword()
     {
      return password;
     }
     
+    /**
+     * Digunakan untuk mendapatkan tanggal registrasi pelanggan
+     *
+     * @return Isi variable joinDate
+     */
     public String getJoinDate()
     {
-     return email;
+     return joinDate;
     }
     
+    /**
+     * Mengatur value dari variable id
+     *
+     * @param  id dengan tipe data integer
+     * @return Value pada parameter dimasukkan ke variable id
+     */
     public void setId(int id)
     {
       this.id = id;  
     }
     
+    /**
+     * Mengatur value dari variable name
+     *
+     * @param  name dengan tipe data string
+     * @return Value pada parameter dimasukkan ke variable name
+     */
     public void setName(String name)
     {
       this.name = name;
     }
     
+    /**
+     * Mengatur value dari variable email
+     *
+     * @param  email dengan tipe data string
+     * @return Value pada parameter dimasukkan ke variable email
+     */
     public void setEmail(String email)
     {
       this.email = email; 
     }
     
+    /**
+     * Mengatur value dari variable password
+     *
+     * @param  password dengan tipe data string
+     * @return Value pada parameter dimasukkan ke variable password
+     */
     public void setPassword(String password)
     {
       this.password = password; 
     }
     
+    /**
+     * Mengatur value dari variable joinDate
+     *
+     * @param  joinDate dengan tipe data string
+     * @return Value pada parameter dimasukkan ke variable joinDate
+     */
     public void setJoinDate(String joinDate)
     {
       this.joinDate = joinDate; 
     }
     
+    /**
+     * Untuk print data variable pada class ini
+     *
+     * @param  Variable dengan input dari salah satu method setter di atas
+     * @return Isi dari variable yang ada. Tergantung pada variable apa yang dipanggil
+     */
     public void printData()
     {
       System.out.println(name);   
