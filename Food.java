@@ -11,7 +11,7 @@ public class Food
     private int id;
     private String name;
     private int price;
-    private String category;
+    private FoodCategory category;
     private Seller seller;
     /**
      * Constructor for objects of class Food
@@ -21,7 +21,7 @@ public class Food
      *@param price
      *@param category
      */
-    public Food(int id, String name, Seller seller, int price, String category)
+    public Food(int id, String name, Seller seller, int price, FoodCategory category)
     {
         // initialise instance variables
         this.id = id;
@@ -80,7 +80,7 @@ public class Food
      *
      * @return Isi variable category
      */
-    public String getCategory()
+    public FoodCategory getCategory()
     {
         // put your code here
         return category;
@@ -140,7 +140,7 @@ public class Food
      * @param  category dengan tipe data string
      * @return Value pada parameter dimasukkan ke variable string
      */
-    public void setCategory(String category)
+    public void setCategory(FoodCategory category)
     {
         // put your code here
         this.category = category;
@@ -154,6 +154,12 @@ public class Food
      */
     public void printData()
     {
-      System.out.println(name);  
+      System.out.println("=====FOOD=====");  
+      System.out.println("ID: "+id);
+      System.out.println("Name: "+name);
+      System.out.println("Seller: "+seller.getName()); 
+      System.out.println("City: "+seller.getLocation().getCity());
+      System.out.println("Price: "+price);
+      System.out.println("Category: "+category); 
     }
 }
