@@ -13,6 +13,9 @@ public class Invoice
     private String date;
     private int totalPrice;
     private Customer customer;
+    private PaymentType paymentType;
+    private InvoiceStatus status;
+    
     /**
      * Constructor for objects of class Invoice
      *@param id
@@ -22,7 +25,7 @@ public class Invoice
      *@param totalPrice
      */
     public Invoice(int id, int idFood, String date, Customer customer, 
-    int totalPrice)
+    int totalPrice, InvoiceStatus status)
     {
         // initialise instance variables
         this.id = id;
@@ -30,6 +33,7 @@ public class Invoice
         this.date = date;
         this.customer = customer;
         this.totalPrice = totalPrice;
+        this.status = status;
     }
 
     /**
@@ -85,6 +89,29 @@ public class Invoice
     {
         // put your code here
         return customer;
+    }
+    
+    
+    /**
+     * 
+     *
+     * @return 
+     */
+    public PaymentType getPaymentType()
+    {
+        // put your code here
+        return paymentType;
+    }
+    
+    /**
+     * 
+     *
+     * @return 
+     */
+    public InvoiceStatus getInvoiceStatus()
+    {
+        // put your code here
+        return status;
     }
     
     /**
@@ -148,6 +175,30 @@ public class Invoice
     }
     
     /**
+     * 
+     *
+     * @param  
+     * @return 
+     */
+    public void setPaymentType(PaymentType paymentType)
+    {
+        // put your code here
+        this.paymentType = paymentType;
+    }
+    
+    /**
+     * 
+     *
+     * @param  
+     * @return 
+     */
+    public void setInvoiceStatus(InvoiceStatus status)
+    {
+        // put your code here
+        this.status = status;
+    }
+    
+    /**
      * Untuk print data variable pada class ini
      *
      * @param  Variable dengan input dari salah satu method setter di atas
@@ -155,6 +206,12 @@ public class Invoice
      */
     public void printData()
     {
-      System.out.println(totalPrice);  
+      System.out.println("=====INVOICE=====");  
+      System.out.println("ID: "+id);
+      System.out.println("Food ID: "+idFood);
+      System.out.println("Date: "+date);
+      System.out.println("Customer: "+customer.getName()); 
+      System.out.println("Total Price: "+totalPrice);
+      System.out.println("Status: "+status); 
     }
 }
