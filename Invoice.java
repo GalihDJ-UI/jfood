@@ -5,35 +5,32 @@
  * @author Galih Damar Jati
  * @version (27 Feb 2020)
  */
-public class Invoice
+public abstract class Invoice
 {
     // instance variables - replace the example below with your own
     private int id;
-    private int idFood;
+    private Food food;
     private String date;
-    private int totalPrice;
+    protected int totalPrice;
     private Customer customer;
-    private PaymentType paymentType;
-    private InvoiceStatus status;
+    private InvoiceStatus invoiceStatus;
     
     /**
      * Constructor for objects of class Invoice
      *@param id
-     *@param idFood
+     *@param food
      *@param date
      *@param customer
-     *@param totalPrice
+     *@param invoiceStatus
      */
-    public Invoice(int id, int idFood, String date, Customer customer, 
-    int totalPrice, InvoiceStatus status)
+    public Invoice(int id, Food food, String date, Customer customer, InvoiceStatus invoiceStatus)
     {
         // initialise instance variables
         this.id = id;
-        this.idFood = idFood;
+        this.food = food;
         this.date = date;
         this.customer = customer;
-        this.totalPrice = totalPrice;
-        this.status = status;
+        this.invoiceStatus = invoiceStatus;
     }
 
     /**
@@ -52,10 +49,10 @@ public class Invoice
      *
      * @return Isi variable idFood
      */
-    public int getIdFood()
+    public Food getFood()
     {
         // put your code here
-        return idFood;
+        return food;
     }
     
     /**
@@ -97,10 +94,9 @@ public class Invoice
      *
      * @return 
      */
-    public PaymentType getPaymentType()
+    public abstract PaymentType getPaymentType();
     {
-        // put your code here
-        return paymentType;
+        
     }
     
     /**
@@ -111,7 +107,7 @@ public class Invoice
     public InvoiceStatus getInvoiceStatus()
     {
         // put your code here
-        return status;
+        return invoiceStatus;
     }
     
     /**
@@ -132,10 +128,10 @@ public class Invoice
      * @param  idFood dengan tipe data integer
      * @return Value pada parameter dimasukkan ke variable idFood
      */
-    public void setIdFoods(int idFood)
+    public void setFood(Food food)
     {
         // put your code here
-        this.idFood = idFood;
+        this.food = food;
     }
     
     /**
@@ -156,10 +152,9 @@ public class Invoice
      * @param  totalPrice dengan tipe data integer
      * @return Value pada parameter dimasukkan ke variable totalPrice
      */
-    public void setTotalPrice(int totalPrice)
+    public abstract void setTotalPrice();
     {
         // put your code here
-        this.totalPrice = totalPrice;
     }
     
     /**
@@ -173,29 +168,17 @@ public class Invoice
         // put your code here
         this.customer = customer;
     }
-    
+
     /**
      * 
      *
      * @param  
      * @return 
      */
-    public void setPaymentType(PaymentType paymentType)
+    public void setInvoiceStatus(InvoiceStatus invoiceStatus)
     {
         // put your code here
-        this.paymentType = paymentType;
-    }
-    
-    /**
-     * 
-     *
-     * @param  
-     * @return 
-     */
-    public void setInvoiceStatus(InvoiceStatus status)
-    {
-        // put your code here
-        this.status = status;
+        this.invoiceStatus = invoiceStatus;
     }
     
     /**
@@ -206,12 +189,12 @@ public class Invoice
      */
     public void printData()
     {
-      System.out.println("=====INVOICE=====");  
-      System.out.println("ID: "+id);
-      System.out.println("Food ID: "+idFood);
-      System.out.println("Date: "+date);
-      System.out.println("Customer: "+customer.getName()); 
-      System.out.println("Total Price: "+totalPrice);
-      System.out.println("Status: "+status); 
+      //System.out.println("=====INVOICE=====");  
+      //System.out.println("ID: "+id);
+      //System.out.println("Food ID: "+idFood);
+      //System.out.println("Date: "+date);
+      //System.out.println("Customer: "+customer.getName()); 
+      //System.out.println("Total Price: "+totalPrice);
+      //System.out.println("Status: "+status); 
     }
 }
