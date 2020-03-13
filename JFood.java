@@ -34,6 +34,7 @@ public class JFood
       cashless2.setTotalPrice();
       cashless3.setTotalPrice();
       
+      
       cashless1.printData();
       cashless2.printData();
       cashless3.printData();
