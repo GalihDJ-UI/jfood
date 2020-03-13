@@ -18,21 +18,32 @@ public class JFood
      Food food1 = new Food(22, "Espresso", seller1, 2000, FoodCategory.Coffee);
      Food food2 = new Food(23, "Arabica", seller1, 20000, FoodCategory.Coffee);
      
+     
      CashlessInvoice cashless1 = new CashlessInvoice(1, food1, "12 Maret 2020", customer1, InvoiceStatus.Ongoing);
      CashlessInvoice cashless2 = new CashlessInvoice(2, food1, "12 Maret 2020", customer1, InvoiceStatus.Ongoing, promo1);
      CashlessInvoice cashless3 = new CashlessInvoice(3, food2, "12 Maret 2020", customer1, InvoiceStatus.Ongoing, promo1);
      //Invoice invoice = new Invoice(24, 25, "1 Maret 2020", customer1, 2000, InvoiceStatus.Finished);  
-     // PaymentType payment = (PaymentType.Cash);
-      
+
+     CashInvoice cash1 = new CashInvoice (1, food1, "13 Maret 2020", customer1, InvoiceStatus.Finished);
+     CashInvoice cash2 = new CashInvoice (2, food1, "13 Maret 2020", customer1, InvoiceStatus.Finished);
+     
       //System.out.println(food1.getCategory());
       //System.out.println(payment.toString());
       //seller1.printData();
       //seller1.setName("Pascal");
       //seller1.printData();
       
-      cashless1.setTotalPrice();
-      cashless2.setTotalPrice();
-      cashless3.setTotalPrice();
+      
+     cash1.setTotalPrice();
+     cash2.setDeliveryFee(5000);
+     cash2.setTotalPrice();
+      
+     cash1.printData();
+     cash2.printData();
+     
+     cashless1.setTotalPrice();
+     cashless2.setTotalPrice();
+     cashless3.setTotalPrice();
       
       
       cashless1.printData();
