@@ -45,7 +45,7 @@ public class CashlessInvoice extends Invoice
         return promo;
     }
     
-    public void setPromo(Promo promo)
+    public void setPromo()
     {
         // put your code here
         this.promo = promo;
@@ -54,9 +54,9 @@ public class CashlessInvoice extends Invoice
     public void setTotalPrice()
     {
         // put your code here
-        if ((promo != null) && (promo.getActive() == true) && (getFood().getPrice()>promo.getMinPrice()))
+        if ((promo != null) && (promo.getActive() == true) && (getFood().getPrice() >= getPromo().getMinPrice()))
         {
-          super.totalPrice = getFood().getPrice() - (promo.getDiscount());
+          super.totalPrice = (getFood().getPrice()) - (promo.getDiscount());
         }
         
         else
@@ -73,7 +73,7 @@ public class CashlessInvoice extends Invoice
        System.out.println("Food : "+getFood().getName());
        System.out.println("Date: "+getDate());
        System.out.println("Customer: "+getCustomer().getName()); 
-       System.out.println("Total Price: "+super.totalPrice);
+       System.out.println("Total Price: "+getTotalPrice());
        System.out.println("Status: "+getInvoiceStatus()); 
        System.out.println("Payment Type: "+PAYMENT_TYPE);
         

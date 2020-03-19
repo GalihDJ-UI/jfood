@@ -95,9 +95,7 @@ public abstract class Invoice
      * @return 
      */
     public abstract PaymentType getPaymentType();
-    {
-        
-    }
+    
     
     /**
      * 
@@ -153,9 +151,9 @@ public abstract class Invoice
      * @return Value pada parameter dimasukkan ke variable totalPrice
      */
     public abstract void setTotalPrice();
-    {
+    //{
         // put your code here
-    }
+    //}
     
     /**
      * Mengatur value dari variable customer
@@ -187,7 +185,7 @@ public abstract class Invoice
      * @param  Variable dengan input dari salah satu method setter di atas
      * @return Isi dari variable yang ada. Tergantung pada variable apa yang dipanggil
      */
-    public void printData()
+    public abstract void printData();
     {
       //System.out.println("=====INVOICE=====");  
       //System.out.println("ID: "+id);

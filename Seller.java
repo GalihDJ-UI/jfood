@@ -144,8 +144,12 @@ public class Seller
      * @param  Variable dengan input dari salah satu method setter di atas
      * @return Isi dari variable yang ada. Tergantung pada variable apa yang dipanggil
      */
-    public void printData()
+    //public void printData()
+    //{
+     //System.out.println(name);   
+    //}
+    public String toString()
     {
-     System.out.println(name);   
+     return "Id = "+getId()+"\nNama = "+getName()+"\nPhone Number = "+getPhoneNumber()+"\nLocation = "+getLocation().getProvince();
     }
 }

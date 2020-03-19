@@ -23,7 +23,7 @@ public class CashInvoice extends Invoice
     /**
      * Constructor for objects of class CashInvoice
      */
-    public CashInvoice(int id, Food food, String date, Customer customer, InvoiceStatus invoiceStatus, int delivryFee)
+    public CashInvoice(int id, Food food, String date, Customer customer, InvoiceStatus invoiceStatus, int deliveryFee)
     {
         // initialise instance variables
         super(id, food, date, customer, invoiceStatus);
@@ -57,9 +57,9 @@ public class CashInvoice extends Invoice
     public void setTotalPrice()
     {
         // put your code here
-        if (deliveryFee != 0)
+        if ((getDeliveryFee() > 0))
         {
-          super.totalPrice = getFood().getPrice() + getDeliveryFee();
+          super.totalPrice = (getFood().getPrice()) + getDeliveryFee();
         }
         
         else
@@ -79,6 +79,6 @@ public class CashInvoice extends Invoice
        System.out.println("Delivery Fee: "+getDeliveryFee());
        System.out.println("Total Price: "+getTotalPrice());
        System.out.println("Status: "+getInvoiceStatus()); 
-       System.out.println("Payment Type: "+PAYMENT_TYPE);
+       System.out.println("Payment Type: "+getPaymentType());
     }
 }

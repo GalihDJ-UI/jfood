@@ -23,6 +23,6 @@ comment7.params=description
 comment7.target=void\ setDescription(java.lang.String)
 comment7.text=\r\n\ Mengatur\ value\ dari\ variable\ description\r\n\r\n\ @param\ \ description\ dengan\ tipe\ data\ string\r\n\ @return\ Value\ pada\ parameter\ dimasukkan\ ke\ variable\ description\r\n
 comment8.params=
-comment8.target=void\ printData()
+comment8.target=java.lang.String\ toString()
 comment8.text=\r\n\ Untuk\ print\ data\ variable\ pada\ class\ ini\r\n\r\n\ @param\ \ Variable\ dengan\ input\ dari\ salah\ satu\ method\ setter\ di\ atas\r\n\ @return\ Isi\ dari\ variable\ yang\ ada.\ Tergantung\ pada\ variable\ apa\ yang\ dipanggil\r\n
 numComments=9

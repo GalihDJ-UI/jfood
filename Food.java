@@ -149,17 +149,22 @@ public class Food
     /**
      * Untuk print data variable pada class ini
      *
-     * @param  Variable dengan input dari salah satu method setter di atas
-     * @return Isi dari variable yang ada. Tergantung pada variable apa yang dipanggil
-     */
-    public void printData()
+    * @param  Variable dengan input dari salah satu method setter di atas
+    * @return Isi dari variable yang ada. Tergantung pada variable apa yang dipanggil
+    */
+    //public void printData()
+    //{
+    //  System.out.println("=====FOOD=====");  
+    //  System.out.println("ID: "+id);
+     // System.out.println("Name: "+name);
+    //  System.out.println("Seller: "+seller.getName()); 
+     // System.out.println("City: "+seller.getLocation().getCity());
+    //  System.out.println("Price: "+price);
+    //  System.out.println("Category: "+category); 
+    //}
+    
+    public String toString()
     {
-      System.out.println("=====FOOD=====");  
-      System.out.println("ID: "+id);
-      System.out.println("Name: "+name);
-      System.out.println("Seller: "+seller.getName()); 
-      System.out.println("City: "+seller.getLocation().getCity());
-      System.out.println("Price: "+price);
-      System.out.println("Category: "+category); 
+     return "Id = "+getId()+"\nNama = "+getName()+"\nSeller = "+getSeller().getName()+"\nCity = "+getSeller().getLocation().getCity()+"\nPrice = "+getPrice()+"\nCategory = "+getCategory();
     }
 }

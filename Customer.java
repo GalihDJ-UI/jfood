@@ -1,3 +1,6 @@
+import java.util.*;
+import java.util.regex.*; 
+import java.text.*;
 
 /**
  * Menyimpan data pelanggan.
@@ -11,7 +14,7 @@ public class Customer
     private int id;
     private String name;
     private String password;
-    private String joinDate;
+    private Calendar joinDate;
     private String email;
 
     /**
@@ -23,16 +26,32 @@ public class Customer
      *@param joinDate
      */
     public Customer(int id, String name, String email, String password, 
-    String joinDate)
+    Calendar joinDate)
+    {
+        // initialise instance variables
+        setEmail(email);
+        setPassword(password);
+        this.id = id;
+        this.name = name;
+        this.joinDate = joinDate;
+    }
+    
+    public Customer(int id, String name, String email, String password, 
+    int year, int month, int dayOfMonth)
     {
         // initialise instance variables
         this.id = id;
         this.name = name;
         this.email = email;
         this.password = password;
-        this.joinDate = joinDate;
+        this.joinDate = new GregorianCalendar (year, month-1, dayOfMonth);
     }
-
+    
+    public Customer(int id, String name, String email, String password)
+    {
+        // initialise instance variables
+    }
+    
     /**
      * Digunakan untuk mendapatkan id pelanggan
      *
@@ -79,9 +98,9 @@ public class Customer
      *
      * @return Isi variable joinDate
      */
-    public String getJoinDate()
+    public Calendar getJoinDate()
     {
-     return joinDate;
+        return joinDate;
     }
     
     /**
@@ -114,7 +133,18 @@ public class Customer
      */
     public void setEmail(String email)
     {
-      this.email = email; 
+        
+        String regex = "^(?!\\.)(?!.\\.$)(?!.*\\.$)[\\w\\.&*_~]+@(.+)+$";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher match = pattern.matcher(email);
+        if(match.find())
+        {
+            this.email = email;
+        }
+        else
+        {
+            this.email = "";
+        }
     }
     
     /**
@@ -125,7 +155,17 @@ public class Customer
      */
     public void setPassword(String password)
     {
-      this.password = password; 
+      String regex = "^(?=.*[a-z])(?=.*[A-Z])(?=.*/d)[a-zA-Z/d]{6,}$";
+      Pattern pattern = Pattern.compile(regex);
+      Matcher match = pattern.matcher(password);
+      if(match.find())
+        {
+            this.password = password;
+        }
+        else
+        {
+            this.password = "";
+        } 
     }
     
     /**
@@ -134,9 +174,14 @@ public class Customer
      * @param  joinDate dengan tipe data string
      * @return Value pada parameter dimasukkan ke variable joinDate
      */
-    public void setJoinDate(String joinDate)
+    public void setJoinDate(Calendar joinDate)
     {
       this.joinDate = joinDate; 
+    }
+    
+    public void setJoinDate(int year, int month, int dayOfMonth)
+    {
+      this.joinDate = new GregorianCalendar (year, month-1, dayOfMonth);
     }
     
     /**
@@ -145,8 +190,14 @@ public class Customer
      * @param  Variable dengan input dari salah satu method setter di atas
      * @return Isi dari variable yang ada. Tergantung pada variable apa yang dipanggil
      */
-    public void printData()
+    public String toString()
     {
-      System.out.println(name);   
+      String date = "";
+      SimpleDateFormat simpleDate = new SimpleDateFormat("dd MMMM yyyy");
+      if(getJoinDate() != null)
+      {
+          date = simpleDate.format(joinDate.getTime());
+      }
+      return "Id = "+getId()+"\nNama = "+getName()+"\nEmail = "+getEmail()+"\nPassword = "+getPassword()+"\nJoin Date = "+getJoinDate()+"\n";
     }
 }

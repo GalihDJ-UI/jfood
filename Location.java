@@ -101,8 +101,12 @@ public class Location
      * @param  Variable dengan input dari salah satu method setter di atas
      * @return Isi dari variable yang ada. Tergantung pada variable apa yang dipanggil
      */
-    public void printData()
+    //public void printData()
+    //{
+    //    System.out.println(province);   
+    //}
+    public String toString()
     {
-        System.out.println(province);   
+     return "Province = "+getProvince()+"\nCity = "+getCity()+"\nDescription = "+getDescription();
     }
 }

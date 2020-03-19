@@ -88,8 +88,11 @@ public class Promo
       this.active = active;  
     }
     
-    public void printData()
+    //public void printData()
+    //{
+    //}
+    public String toString()
     {
-      //System.out.println();
+     return "Id = "+getId()+"\nCode = "+getCode()+"\nDiscount = "+getDiscount()+"\nMin Price = "+getMinPrice()+"\nActive Status= "+getActive();
     }
 }
