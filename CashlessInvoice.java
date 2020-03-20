@@ -1,4 +1,6 @@
-
+import java.util.*;
+import java.util.regex.*; 
+import java.text.*;
 /**
  * Write a description of class ClasslessInvoice here.
  *
@@ -14,16 +16,16 @@ public class CashlessInvoice extends Invoice
     /**
      * Constructor for objects of class ClasslessInvoice
      */
-    public CashlessInvoice(int id, Food food, String date, Customer customer, InvoiceStatus invoiceStatus)
+    public CashlessInvoice(int id, Food food, Customer customer, InvoiceStatus invoiceStatus)
     {
         // initialise instance variables;
-        super(id, food, date, customer, invoiceStatus);
+        super(id, food, customer, invoiceStatus);
     }
     
-    public CashlessInvoice(int id, Food food, String date, Customer customer, InvoiceStatus invoiceStatus, Promo promo)
+    public CashlessInvoice(int id, Food food, Customer customer, InvoiceStatus invoiceStatus, Promo promo)
     {
         // initialise instance variables;
-        super(id, food, date, customer, invoiceStatus);
+        super(id, food, customer, invoiceStatus);
         this.promo = promo;
     }
     
@@ -66,21 +68,39 @@ public class CashlessInvoice extends Invoice
         
     }
     
-    public void printData()
-    {
-       System.out.println("=====INVOICE====="); 
-       System.out.println("ID: "+getId());
-       System.out.println("Food : "+getFood().getName());
-       System.out.println("Date: "+getDate());
-       System.out.println("Customer: "+getCustomer().getName()); 
-       System.out.println("Total Price: "+getTotalPrice());
-       System.out.println("Status: "+getInvoiceStatus()); 
-       System.out.println("Payment Type: "+PAYMENT_TYPE);
+    //public void printData()
+    //{
+     //  System.out.println("=====INVOICE====="); 
+     //  System.out.println("ID: "+getId());
+    //   System.out.println("Food : "+getFood().getName());
+    //   System.out.println("Date: "+getDate());
+     //  System.out.println("Customer: "+getCustomer().getName()); 
+     //  System.out.println("Total Price: "+getTotalPrice());
+     //  System.out.println("Status: "+getInvoiceStatus()); 
+    //   System.out.println("Payment Type: "+PAYMENT_TYPE);
         
-       if((promo != null) && (promo.getActive() == true) && getFood().getPrice()>=promo.getMinPrice()) 
-       {
-         System.out.println("Promo: "+promo.getCode());
-       }
+    //   if((promo != null) && (promo.getActive() == true) && getFood().getPrice()>=promo.getMinPrice()) 
+    //   {
+     //    System.out.println("Promo: "+promo.getCode());
+    //   }
       
+    //}
+    public String toString()
+    {
+      String date = "";
+      SimpleDateFormat simpleDate = new SimpleDateFormat("dd MMMM yyyy");
+      if(getDate() != null)
+      {
+          date = simpleDate.format(getDate().getTime());
+      }
+      return "==========INVOICE==========" +"\nId = "+getId()+"\nFood = "+getFood().getName()+ "\n Date = "+date
+      +"\nCustomer: "+getCustomer().getName()
+      +"\nTotal Price: "+getTotalPrice()+ "\nStatus: "+getInvoiceStatus()
+      +"\nPayment Type: "+getPaymentType();
+      
+      // if(promo != null && promo.getActive() == true && getFood().getPrice() > promo.getMinPrice())
+       // {
+       //  return"\nPromo: "+promo.getCode();
+      //}
     }
 }

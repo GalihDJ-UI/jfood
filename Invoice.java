@@ -1,4 +1,6 @@
-
+import java.util.*;
+import java.util.regex.*; 
+import java.text.*;
 /**
  * Menyimpan bukti transaksi
  *
@@ -10,7 +12,7 @@ public abstract class Invoice
     // instance variables - replace the example below with your own
     private int id;
     private Food food;
-    private String date;
+    private Calendar date;
     protected int totalPrice;
     private Customer customer;
     private InvoiceStatus invoiceStatus;
@@ -23,14 +25,14 @@ public abstract class Invoice
      *@param customer
      *@param invoiceStatus
      */
-    public Invoice(int id, Food food, String date, Customer customer, InvoiceStatus invoiceStatus)
+    public Invoice(int id, Food food, Customer customer, InvoiceStatus invoiceStatus)
     {
         // initialise instance variables
         this.id = id;
         this.food = food;
-        this.date = date;
         this.customer = customer;
         this.invoiceStatus = invoiceStatus;
+        this.date = Calendar.getInstance();
     }
 
     /**
@@ -60,7 +62,7 @@ public abstract class Invoice
      *
      * @return Isi variable date
      */
-    public String getDate()
+    public Calendar getDate()
     {
         // put your code here
         return date;
@@ -138,10 +140,16 @@ public abstract class Invoice
      * @param  date dengan tipe data string
      * @return Value pada parameter dimasukkan ke variable date
      */
-    public void setDate(String date)
+    public void setDate(Calendar date)
     {
         // put your code here
         this.date = date;
+    }
+    
+    public void setDate(int year, int month, int dayOfMonth)
+    {
+        // put your code here
+        this.date = new GregorianCalendar (year, month-1, dayOfMonth);
     }
     
     /**
@@ -185,8 +193,8 @@ public abstract class Invoice
      * @param  Variable dengan input dari salah satu method setter di atas
      * @return Isi dari variable yang ada. Tergantung pada variable apa yang dipanggil
      */
-    public abstract void printData();
-    {
+    //public abstract void printData();
+    //{
       //System.out.println("=====INVOICE=====");  
       //System.out.println("ID: "+id);
       //System.out.println("Food ID: "+idFood);
@@ -194,5 +202,10 @@ public abstract class Invoice
       //System.out.println("Customer: "+customer.getName()); 
       //System.out.println("Total Price: "+totalPrice);
       //System.out.println("Status: "+status); 
+    //}
+    
+    public abstract String toString();
+    {
+      
     }
 }
