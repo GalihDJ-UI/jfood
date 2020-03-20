@@ -42,14 +42,18 @@ public class Customer
         // initialise instance variables
         this.id = id;
         this.name = name;
-        this.email = email;
-        this.password = password;
+        setEmail(email);
+        setPassword(password);
         this.joinDate = new GregorianCalendar (year, month-1, dayOfMonth);
     }
     
     public Customer(int id, String name, String email, String password)
     {
         // initialise instance variables
+        this.id = id;
+        this.name = name;
+        setEmail(email);
+        setPassword(password);
     }
     
     /**
@@ -134,7 +138,7 @@ public class Customer
     public void setEmail(String email)
     {
         
-        String regex = "^(?!\\.)(?!.\\.$)(?!.*\\.$)[\\w\\.&*_~]+@(.+)+$";
+        String regex = "^(?!\\.)(?!.*\\.$)(?!.*\\.\\.$)[\\w\\.&*_~]+@(.+)+$";
         Pattern pattern = Pattern.compile(regex);
         Matcher match = pattern.matcher(email);
         if(match.find())
@@ -155,7 +159,7 @@ public class Customer
      */
     public void setPassword(String password)
     {
-      String regex = "^(?=.*[a-z])(?=.*[A-Z])(?=.*/d)[a-zA-Z/d]{6,}$";
+      String regex = "^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])[A-Za-z\\d]{6,}$";
       Pattern pattern = Pattern.compile(regex);
       Matcher match = pattern.matcher(password);
       if(match.find())
@@ -198,6 +202,6 @@ public class Customer
       {
           date = simpleDate.format(joinDate.getTime());
       }
-      return "Id = "+getId()+"\nNama = "+getName()+"\nEmail = "+getEmail()+"\nPassword = "+getPassword()+"\nJoin Date = "+getJoinDate()+"\n";
+      return "Id = "+getId()+"\nNama = "+getName()+"\nEmail = "+getEmail()+"\nPassword = "+getPassword()+"\nJoin Date = "+date+"\n";
     }
 }
