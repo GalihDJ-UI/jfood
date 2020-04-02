@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public class DatabaseCustomer
 {
     // instance variables - replace the example below with your own
-    private static ArrayList<Customer> CUSTOMER_DATABASE = new ArrayList<>();
+    private static ArrayList<Customer> CUSTOMER_DATABASE = new ArrayList<Customer>();
     private static int lastId = 0;
     /**
      * Constructor for objects of class DatabaseCustomer
@@ -51,29 +51,13 @@ public class DatabaseCustomer
         return dummyCus;
     }
 
-    public static boolean addCustomer(Customer customer)
-    {
-        // put your code here
 
-        boolean cusStatus = false;
-        for (int i = 0; i < CUSTOMER_DATABASE.size(); i++)
-        {
-            Customer customer1 = CUSTOMER_DATABASE.get(i);
-            if (customer1.getEmail() != customer.getEmail())
-            {
-                CUSTOMER_DATABASE.add(customer);
-                lastId = customer.getId();
-                cusStatus = true;
-            }
-
-            else
-            {
-                cusStatus = false;
-            }
+    public static boolean addCustomer(Customer customer){
+        CUSTOMER_DATABASE.add(customer);
+        lastId = customer.getId() + 1;
+        return false;
         }
 
-        return cusStatus;
-    }
     
 
     public static boolean removeCustomer(int id)
@@ -96,6 +80,4 @@ public class DatabaseCustomer
 
         return cusStatus;
     }
-    
-
 }

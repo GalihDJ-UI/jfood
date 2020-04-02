@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public class DatabaseFood
 {
     // instance variables - replace the example below with your own
-    private static ArrayList<Food> FOOD_DATABASE = new ArrayList<>();
+    private static ArrayList<Food> FOOD_DATABASE = new ArrayList<Food>();
     private static int lastId = 0;
     /**
      * Mengambil input boolean untuk menambahkan food
@@ -75,14 +75,9 @@ public class DatabaseFood
         for (int i = 0; i < FOOD_DATABASE.size(); i++)
         {
             Food foods = FOOD_DATABASE.get(i);
-            if (foods.getCategory() == category)
+            if (foods.getCategory().equals(category))
             {
                 dummyFoodList.add(foods);
-            }
-
-            else
-            {
-                dummyFoodList = null;
             }
         }
 
@@ -93,7 +88,7 @@ public class DatabaseFood
     {
       // put your code here
         FOOD_DATABASE.add(foods);
-        lastId = foods.getId();
+        lastId = foods.getId()+1;
         return true;
     }
 

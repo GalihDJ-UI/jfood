@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public class DatabaseSeller
 {
     // instance variables - replace the example below with your own
-    private static ArrayList<Seller> SELLER_DATABASE = new ArrayList<>();
+    private static ArrayList<Seller> SELLER_DATABASE = new ArrayList<Seller>();
     private static int lastId = 0;
     /**
 
