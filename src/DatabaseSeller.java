@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 
 /**
  * Menyimpan database penjual
@@ -8,33 +9,76 @@
 public class DatabaseSeller
 {
     // instance variables - replace the example below with your own
-    private static String[] listSeller;
-
+    private static ArrayList<Seller> SELLER_DATABASE = new ArrayList<>();
+    private static int lastId = 0;
     /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+
      */
+
+    public static ArrayList<Seller> getSellerDatabase()
+    {
+        // put your code here
+        return SELLER_DATABASE;
+    }
+
+    public static int getLastId()
+    {
+        return lastId;
+    }
+
+    public static Seller getSellerById(int id)
+    {
+        Seller dummySel = null;
+        for (int i = 0; i < SELLER_DATABASE.size(); i++)
+        {
+            Seller seller = SELLER_DATABASE.get(i);
+            if (seller.getId() == id)
+            {
+                dummySel = seller;
+            }
+
+            else
+            {
+                dummySel = seller;
+            }
+        }
+
+        return dummySel;
+    }
+
     public static boolean addSeller(Seller seller)
     {
       // put your code here
-      return false;
+        SELLER_DATABASE.add(seller);
+        lastId = seller.getId();
+      return true;
     }
     
-    public static boolean removeSeller(Seller seller)
+    public static boolean removeSeller(int id)
     {
       // put your code here
-      return false;
+        boolean selStatus = false;
+        for (int i = 0; i < SELLER_DATABASE.size(); i++)
+        {
+            Seller seller = SELLER_DATABASE.get(i);
+            if (seller.getId() == id)
+            {
+                SELLER_DATABASE.remove (seller);
+                selStatus = true;
+            }
+
+            else
+            {
+                selStatus = false;
+            }
+        }
+
+        return selStatus;
     }
+
     
-    public static Seller getSeller()
-    {
-      return null;
-    }
-    
-    public static String[] getListSeller()
-    {
-      return listSeller;
-    }
+    //public static String[] getListSeller()
+  //  {
+    //  return listSeller;
+  //  }
 }

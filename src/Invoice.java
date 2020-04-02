@@ -11,7 +11,7 @@ public abstract class Invoice
 {
     // instance variables - replace the example below with your own
     private int id;
-    private Food food;
+    private ArrayList<Food> foods;
     private Calendar date;
     protected int totalPrice;
     private Customer customer;
@@ -19,19 +19,15 @@ public abstract class Invoice
     
     /**
      * Constructor for objects of class Invoice
-     *@param id
-     *@param food
-     *@param date
-     *@param customer
-     *@param invoiceStatus
+
      */
-    public Invoice(int id, Food food, Customer customer, InvoiceStatus invoiceStatus)
+    public Invoice(int id, ArrayList<Food> foods, Customer customer, InvoiceStatus invoiceStatus)
     {
         // initialise instance variables
         this.id = id;
-        this.food = food;
+        this.foods = foods;
         this.customer = customer;
-        this.invoiceStatus = invoiceStatus;
+        this.invoiceStatus = invoiceStatus.Ongoing;
         this.date = Calendar.getInstance();
     }
 
@@ -51,10 +47,10 @@ public abstract class Invoice
      *
      * @return Isi variable idFood
      */
-    public Food getFood()
+    public ArrayList<Food> getFoods()
     {
         // put your code here
-        return food;
+        return foods;
     }
     
     /**
@@ -125,19 +121,19 @@ public abstract class Invoice
     /**
      * Mengatur value dari variable idFood
      *
-     * @param  idFood dengan tipe data integer
+
      * @return Value pada parameter dimasukkan ke variable idFood
      */
-    public void setFood(Food food)
+    public void setFoods(ArrayList<Food> foods)
     {
         // put your code here
-        this.food = food;
+        this.foods = foods;
     }
     
     /**
      * Mengatur value dari variable date
      *
-     * @param  date dengan tipe data string
+
      * @return Value pada parameter dimasukkan ke variable date
      */
     public void setDate(Calendar date)
@@ -155,7 +151,7 @@ public abstract class Invoice
     /**
      * Mengatur value dari variable totalPrice
      *
-     * @param  totalPrice dengan tipe data integer
+
      * @return Value pada parameter dimasukkan ke variable totalPrice
      */
     public abstract void setTotalPrice();
@@ -166,7 +162,7 @@ public abstract class Invoice
     /**
      * Mengatur value dari variable customer
      *
-     * @param  customer dengan tipe data Customer
+
      * @return Value pada parameter dimasukkan ke variable customer
      */
     public void setCustomer(Customer customer)
@@ -190,7 +186,7 @@ public abstract class Invoice
     /**
      * Untuk print data variable pada class ini
      *
-     * @param  Variable dengan input dari salah satu method setter di atas
+
      * @return Isi dari variable yang ada. Tergantung pada variable apa yang dipanggil
      */
     //public abstract void printData();
@@ -206,6 +202,6 @@ public abstract class Invoice
     
     public abstract String toString();
     {
-      
+
     }
 }

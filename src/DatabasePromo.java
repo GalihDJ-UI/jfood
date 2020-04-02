@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 
 /**
  * Write a description of class DatabasePromo here.
@@ -5,39 +6,106 @@
  * @author Galih Damar Jati
  * @version 12-03-2020
  */
-public class DatabasePromo
-{
+public class DatabasePromo {
     // instance variables - replace the example below with your own
-    private static String[] listPromo;
+    private static ArrayList<Promo> PROMO_DATABASE = new ArrayList<>();
+    private static int lastId = 0;
 
     /**
      * Constructor for objects of class DatabasePromo
      */
-    public static boolean addPromo(Promo promo)
-    {
-        // initialise instance variables
+
+    public static ArrayList<Promo> getPromoDatabase() {
+        // put your code here
+        return PROMO_DATABASE;
+    }
+
+    public static int getLastId() {
+        return lastId;
+    }
+
+    public static Promo getPromoById(int id) {
+        Promo dummyPromo = null;
+        for (int i = 0; i < PROMO_DATABASE.size(); i++) {
+            Promo promo = PROMO_DATABASE.get(i);
+            if (promo.getId() == id) {
+                dummyPromo = promo;
+            } else {
+                dummyPromo = promo;
+            }
+        }
+
+        return dummyPromo;
+    }
+
+    public static Promo getPromoByCode(String code) {
+        Promo dummyPromo = null;
+        for (int i = 0; i < PROMO_DATABASE.size(); i++) {
+            Promo promo = PROMO_DATABASE.get(i);
+            if (promo.getCode() == code) {
+                dummyPromo = promo;
+            } else {
+                dummyPromo = promo;
+            }
+        }
+
+        return dummyPromo;
+    }
+
+    public static boolean addPromo(Promo promo) {
+
+        boolean promoStatus = false;
+        for (int i = 0; i < PROMO_DATABASE.size(); i++) {
+            Promo promo1 = PROMO_DATABASE.get(i);
+            if (promo1.getCode() != promo.getCode()) {
+                PROMO_DATABASE.add(promo);
+                lastId = promo.getId();
+                return true;
+            } else {
+                promoStatus = false;
+            }
+        }
+
+        return promoStatus;
+    }
+
+    public static boolean activatePromo(int id) {
+        for (Promo promo : PROMO_DATABASE) {
+            if (promo.getId() == id) {
+                promo.setActive(true);
+                return true;
+            }
+
+        }
         return false;
     }
 
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public static boolean removePromo(Promo promo)
-    {
-      // put your code here
-      return false;
+        public static boolean deactivatePromo(int id) {
+            for (Promo promo : PROMO_DATABASE) {
+                if (promo.getId() == id) {
+                    promo.setActive(false);
+                    return true;
+                }
+
+            }
+            return false;
+        }
+
+        public static boolean removePromo(int id)
+        {
+            boolean promoStatus = false;
+            for (int i = 0; i < PROMO_DATABASE.size(); i++) {
+                Promo promo = PROMO_DATABASE.get(i);
+                if (promo.getId() == id) {
+                    PROMO_DATABASE.remove(promo);
+                    promoStatus = true;
+                }
+                else
+                    {
+                    promoStatus = false;
+                }
+            }
+
+            return promoStatus;
+        }
     }
-    
-    public static Promo getPromo()
-    {
-      return null;   
-    }
-    
-    public static String[] getListPromo()
-    {
-      return listPromo;
-    }
-}
