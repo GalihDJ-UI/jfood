@@ -31,9 +31,8 @@ public class DatabaseFood
     public static Food getFoodById(int id)
     {
         Food dummyFood = null;
-        for (int i = 0; i < FOOD_DATABASE.size(); i++)
+        for (Food foods : FOOD_DATABASE)
         {
-            Food foods = FOOD_DATABASE.get(i);
             if (foods.getId() == id)
             {
                 dummyFood = foods;
@@ -51,9 +50,9 @@ public class DatabaseFood
     public static ArrayList<Food> getFoodBySeller(int sellerId)
     {
         ArrayList<Food> dummyFoodList = new ArrayList<>();
-        for (int i = 0; i < FOOD_DATABASE.size(); i++)
+        for (Food foods : FOOD_DATABASE)
         {
-            Food foods = FOOD_DATABASE.get(i);
+
             if (foods.getId() == sellerId)
             {
                 dummyFoodList.add(foods);
@@ -72,9 +71,8 @@ public class DatabaseFood
     public static ArrayList<Food> getFoodByCategory(FoodCategory category)
     {
         ArrayList<Food> dummyFoodList = new ArrayList<>();
-        for (int i = 0; i < FOOD_DATABASE.size(); i++)
+        for (Food foods : FOOD_DATABASE)
         {
-            Food foods = FOOD_DATABASE.get(i);
             if (foods.getCategory().equals(category))
             {
                 dummyFoodList.add(foods);
@@ -95,23 +93,15 @@ public class DatabaseFood
 
     public static boolean removeFood(int id)
     {
-        boolean foodStatus = false;
-        for (int i = 0; i < FOOD_DATABASE.size(); i++)
+        for (Food foods : FOOD_DATABASE)
         {
-            Food foods = FOOD_DATABASE.get(i);
             if (foods.getId() == id)
             {
                 FOOD_DATABASE.remove (foods);
-                foodStatus = true;
-            }
-
-            else
-            {
-                foodStatus = false;
+                return true;
             }
         }
-
-        return foodStatus;
+        return false;
     }
 
 }

@@ -34,9 +34,8 @@ public class DatabaseCustomer
     public static  Customer getCustomerById(int id)
     {
         Customer dummyCus = null;
-        for (int i = 0; i < CUSTOMER_DATABASE.size(); i++)
+        for (Customer customer : CUSTOMER_DATABASE)
         {
-            Customer customer = CUSTOMER_DATABASE.get(i);
             if (customer.getId() == id)
             {
                 dummyCus = customer;
@@ -70,22 +69,17 @@ public class DatabaseCustomer
 
     public static boolean removeCustomer(int id)
     {
-        boolean cusStatus = false;
-        for (int i = 0; i < CUSTOMER_DATABASE.size(); i++)
+        for (Customer customer : CUSTOMER_DATABASE)
         {
-            Customer customer = CUSTOMER_DATABASE.get(i);
+
             if (customer.getId() == id)
             {
                 CUSTOMER_DATABASE.remove (customer);
-                cusStatus = true;
+                return true;
             }
 
-            else
-            {
-                cusStatus = false;
-            }
         }
 
-        return cusStatus;
+        return false;
     }
 }

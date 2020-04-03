@@ -28,6 +28,7 @@ public class JFood
      System.out.println(DatabaseFood.getFoodByCategory(FoodCategory.Coffee)+"\n");
      System.out.println("\nJapanese\n");
      System.out.println(DatabaseFood.getFoodByCategory(FoodCategory.Japanese)+"\n");
+     
      //Seller seller1 = new Seller(21, "Galih", "galih@gmail.com", "02179187676", location1);
      
      //Customer customer1 = new Customer(1, "Bagus", "..bagus@mail.com", "123456", new GregorianCalendar(2020,3,23));

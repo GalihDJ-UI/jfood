@@ -57,23 +57,15 @@ public class DatabaseSeller
     public static boolean removeSeller(int id)
     {
       // put your code here
-        boolean selStatus = false;
-        for (int i = 0; i < SELLER_DATABASE.size(); i++)
+        for (Seller seller : SELLER_DATABASE)
         {
-            Seller seller = SELLER_DATABASE.get(i);
             if (seller.getId() == id)
             {
                 SELLER_DATABASE.remove (seller);
-                selStatus = true;
-            }
-
-            else
-            {
-                selStatus = false;
+                return true;
             }
         }
-
-        return selStatus;
+        return false;
     }
 
     
