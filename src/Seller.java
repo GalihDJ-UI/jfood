@@ -86,7 +86,7 @@ public class Seller
     /**
      * Mengatur value dari variable id
      *
-     * @param  id dengan tipe data integer
+
      * @return Value pada parameter dimasukkan ke variable id
      */
     public void setId(int id)
@@ -97,7 +97,7 @@ public class Seller
     /**
      * Mengatur value dari variable name
      *
-     * @param  name dengan tipe data string
+
      * @return Value pada parameter dimasukkan ke variable name
      */
     public void setName(String name)
@@ -108,7 +108,7 @@ public class Seller
     /**
      * Mengatur value dari variable email
      *
-     * @param  email dengan tipe data string
+
      * @return Value pada parameter dimasukkan ke variable email
      */
     public void setEmail(String email)
@@ -119,7 +119,7 @@ public class Seller
     /**
      * Mengatur value dari variable phoneNumber
      *
-     * @param  phoneNumber dengan tipe data string
+
      * @return Value pada parameter dimasukkan ke variable phoneNumber
      */
     public void setPhoneNumber(String phoneNumber)
@@ -130,7 +130,7 @@ public class Seller
     /**
      * Mengatur value dari variable phoneNumber
      *
-     * @param  phoneNumber dengan tipe data string
+
      * @return Value pada parameter dimasukkan ke variable phoneNumber
      */
     public void setLocation(Location location)
@@ -141,7 +141,7 @@ public class Seller
     /**
      * Untuk print data variable pada class ini
      *
-     * @param  Variable dengan input dari salah satu method setter di atas
+
      * @return Isi dari variable yang ada. Tergantung pada variable apa yang dipanggil
      */
     //public void printData()

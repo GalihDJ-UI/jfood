@@ -77,39 +77,29 @@ public class CashInvoice extends Invoice {
     //   System.out.println("Payment Type: "+getPaymentType());
     //}
     public String toString() {
-        String date = "";
-        SimpleDateFormat simpleDate = new SimpleDateFormat("dd MMMM yyyy");
-        if (getDate() != null) {
-            date = simpleDate.format(getDate().getTime());
+        String string = "";
+        Date date = getDate().getTime();
+        SimpleDateFormat formatter = new SimpleDateFormat("dd MMMMM yyyy");
+        String formatted = formatter.format(date);
+
+        //Temporal Variable
+        String foodName = "";
+        for (Food foodList : super.getFoods()) {
+            foodName += foodList.getName();
         }
 
+        //Stringy
+        string = "\n===========INVOICE==============" +
+                "\nId = " + super.getId() +
+                "\nDate = " + date +
+                "\nFood = " + foodName;
+        // Delivery Fee Cases
         if (deliveryFee > 0) {
-            String foodName = "";
-            for (int i = 0; i < getFoods().size(); i++) {
-                Food foods = getFoods().get(i);
-                foodName += foods.getName();
-            }
-            return "======INVOICE======" +
-                    "ID: " + super.getId() +
-                    //"\nFood: " + super.getFood().getName() +
-                    "\nDate: " + date +
-                    "\nCustomer: " + super.getCustomer().getName() +
-                    "\nTotal Price: " + super.getTotalPrice() +
-                    "\nStatus: " + super.getInvoiceStatus() +
-                    "\nDelivery Fee: " + getDeliveryFee();
-        } else {
-            String foodName = "";
-            for (int i = 0; i < getFoods().size(); i++) {
-                Food foods = getFoods().get(i);
-                foodName += foods.getName();
-            }
-            return "======INVOICE======" +
-                    "ID: " + super.getId() +
-                    //"\nFood: " + super.getFood().getName() +
-                    "\nDate: " + date +
-                    "\nCustomer: " + super.getCustomer().getName() +
-                    "\nTotal Price: " + super.getTotalPrice() +
-                    "\nStatus: " + super.getInvoiceStatus();
+            string = string + "\nDelivery Fee = " + deliveryFee;
         }
+        string = string +
+                "\nTotal Price = " + super.getTotalPrice() +
+                "\nCustomer = " + super.getCustomer();
+        return string;
     }
 }

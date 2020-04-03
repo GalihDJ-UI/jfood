@@ -19,22 +19,40 @@ public class JFood
      DatabaseCustomer.addCustomer (new Customer(DatabaseCustomer.getLastId()+1,"Galih", "galih@gmail.com", "Password1", 2020, 4, 2));
      DatabaseCustomer.addCustomer (new Customer(DatabaseCustomer.getLastId()+1,"Pascal", "pascal@gmail.com", "Password1", 2020, 4, 2));
 
-     System.out.println("\nCustomer\n");
-     System.out.println(DatabaseCustomer.getCustomerDatabase()+"\n");
-     DatabaseFood.addFood(new Food(DatabaseFood.getLastId()+1, "Espresso", DatabaseSeller.getSellerById(0), 3000, FoodCategory.Coffee));
-     DatabaseFood.addFood(new Food(DatabaseFood.getLastId()+1, "Mocachino", DatabaseSeller.getSellerById(0), 3000, FoodCategory.Coffee));
-     DatabaseFood.addFood(new Food(DatabaseFood.getLastId()+1, "Sushi", DatabaseSeller.getSellerById(0), 3000, FoodCategory.Japanese));
-     System.out.println("\nCoffee\n");
-     System.out.println(DatabaseFood.getFoodByCategory(FoodCategory.Coffee)+"\n");
-     System.out.println("\nJapanese\n");
-     System.out.println(DatabaseFood.getFoodByCategory(FoodCategory.Japanese)+"\n");
+     //System.out.println("\nCustomer\n");
+     //System.out.println(DatabaseCustomer.getCustomerDatabase()+"\n");
+     DatabaseFood.addFood(new Food(DatabaseFood.getLastId()+1, "Espresso", DatabaseSeller.getSellerById(0), 20000, FoodCategory.Coffee));
+     DatabaseFood.addFood(new Food(DatabaseFood.getLastId()+1, "Mocachino", DatabaseSeller.getSellerById(0), 20000, FoodCategory.Coffee));
+     DatabaseFood.addFood(new Food(DatabaseFood.getLastId()+1, "Sushi", DatabaseSeller.getSellerById(0), 20000, FoodCategory.Japanese));
+     //System.out.println("\nCoffee\n");
+     //System.out.println(DatabaseFood.getFoodByCategory(FoodCategory.Coffee)+"\n");
+     //System.out.println("\nJapanese\n");
+     //System.out.println(DatabaseFood.getFoodByCategory(FoodCategory.Japanese)+"\n");
      
      //Seller seller1 = new Seller(21, "Galih", "galih@gmail.com", "02179187676", location1);
      
      //Customer customer1 = new Customer(1, "Bagus", "..bagus@mail.com", "123456", new GregorianCalendar(2020,3,23));
      //Customer customer2 = new Customer(2, "Bagas", "bagas@mail.com", "Password1", 2020,3,23);
      //Customer customer3 = new Customer(3, "Bagis", "bagis@mail.com", "Password2");
-     //Promo promo1 = new Promo (15, "22W51", 10000, 20000, true);
+     DatabasePromo.addPromo(new Promo( DatabaseFood.getLastId()+1, "22W51", 10000, 20000, false));
+     DatabasePromo.addPromo(new Promo( DatabaseFood.getLastId()+1, "22W51", 10000, 20000, false));
+     System.out.println("\nPromo\n");
+     System.out.println(DatabasePromo.getPromoDatabase()+"\n");
+     ArrayList<Food> list1 = new ArrayList<Food>();
+     list1.add(DatabaseFood.getFoodById(1));
+     list1.add(DatabaseFood.getFoodById(2));
+     ArrayList<Food> list2 = new ArrayList<Food>();
+     list2.add(DatabaseFood.getFoodById(3));
+     list2.add(DatabaseFood.getFoodById(4));
+
+
+     DatabaseInvoice.addInvoice(new CashInvoice(DatabaseInvoice.getLastId()+1, list1, DatabaseCustomer.getCustomerById(1)));
+
+     DatabaseInvoice.addInvoice(new CashlessInvoice(DatabaseInvoice.getLastId()+1, list1, DatabaseCustomer.getCustomerById(1)));
+
+     System.out.println(DatabaseInvoice.getInvoiceDatabase()+"\n");
+
+     DatabaseInvoice.addInvoice(new CashlessInvoice(DatabaseInvoice.getLastId()+1, list1, DatabaseCustomer.getCustomerById(2)), DatabasePromo.getPromoById(1));
      //Food food1 = new Food(22, "Espresso", seller1, 2000, FoodCategory.Coffee);
      //Food food2 = new Food(23, "Arabica", seller1, 20000, FoodCategory.Coffee);
      

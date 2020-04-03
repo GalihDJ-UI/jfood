@@ -1,5 +1,5 @@
 import java.util.*;
-import java.util.regex.*; 
+import java.util.regex.*;
 import java.text.*;
 /**
  * Write a description of class ClasslessInvoice here.
@@ -72,45 +72,46 @@ public class CashlessInvoice extends Invoice {
     //  System.out.println("Status: "+getInvoiceStatus());
     //   System.out.println("Payment Type: "+PAYMENT_TYPE);
 
-    //   if((promo != null) && (promo.getActive() == true) && getFood().getPrice()>=promo.getMinPrice()) 
+    //   if((promo != null) && (promo.getActive() == true) && getFood().getPrice()>=promo.getMinPrice())
     //   {
     //    System.out.println("Promo: "+promo.getCode());
     //   }
 
     //}
-    public String toString() {
-        String date = "";
-        SimpleDateFormat simpleDate = new SimpleDateFormat("dd MMMM yyyy");
-        if (getDate() != null) {
-            date = simpleDate.format(getDate().getTime());
+    public String toString()
+    {
+        StringBuilder foods = new StringBuilder();
+        for (Food foodList : getFoods()) {
+            foods.append(foodList.getName()).append(", ");
         }
-        if ((promo != null) && (getPromo().getActive() == true) && (getTotalPrice() > promo.getMinPrice())) {
-            String foodName = "";
-            for (int i = 0; i < getFoods().size(); i++) {
-                Food foods = getFoods().get(i);
-                foodName += foods.getName();
-            }
-            return "======INVOICE======" +
-                    "ID: " + super.getId() +
-                    //"\nFood: " + super.getFoods().getName() +
-                    "\nDate: " + date +
+        foods = new StringBuilder(foods.substring(0, foods.length() - 2));
+        setTotalPrice();
+        String timeNow = "";
+        SimpleDateFormat sdf = new SimpleDateFormat("dd MMMM yyyy");
+        timeNow = sdf.format(super.getDate().getTime());
+        if(promo == null  || !promo.getActive() || super.totalPrice  < getPromo().getMinPrice())
+        {
+            return "==========INVOICE==========\n" +
+                    "ID : " + super.getId() +
+                    "\nFood" + foods +
+                    "\nDate: " + timeNow +
                     "\nCustomer: " + super.getCustomer().getName() +
-                    "\nTotal Price: " + super.getTotalPrice() +
+                    "\nTotal Price: " + getTotalPrice() +
                     "\nStatus: " + super.getInvoiceStatus() +
-                    "\nPromo: " + getPromo().getCode();
-        } else {
-            String foodName = "";
-            for (int i = 0; i < getFoods().size(); i++) {
-                Food foods = getFoods().get(i);
-                foodName += foods.getName();
-            }
-            return "======INVOICE======" +
-                    "ID: " + super.getId() +
-                    //"\nFood: " + super.getFoods().getName() +
-                    "\nDate: " + date +
-                    "\nCustomer: " + super.getCustomer().getName() +
-                    "\nTotal Price: " + super.getTotalPrice() +
-                    "\nStatus: " + super.getInvoiceStatus();
+                    "\nPayment Type: " + PAYMENT_TYPE ;
+
         }
-    }
-}
+
+        else
+        {
+            return "==========INVOICE==========\n" +
+                    "ID : " + super.getId() +
+                    "\nFood: " + foods +
+                    "\nDate: " + timeNow +
+                    "\nPromo: " + promo.getCode() +
+                    "\nCustomer: " + super.getCustomer().getName() +
+                    "\nTotal Price: " + getTotalPrice() +
+                    "\nStatus: " + super.getInvoiceStatus() +
+                    "\nPayment Type: " + PAYMENT_TYPE ;
+        }
+}}

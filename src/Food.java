@@ -15,11 +15,7 @@ public class Food
     private Seller seller;
     /**
      * Constructor for objects of class Food
-     *@param id
-     *@param name
-     *@param seller
-     *@param price
-     *@param category
+
      */
     public Food(int id, String name, Seller seller, int price, FoodCategory category)
     {
@@ -89,7 +85,7 @@ public class Food
     /**
      * Mengatur value dari variable id
      *
-     * @param  id dengan tipe data integer
+
      * @return Value pada parameter dimasukkan ke variable id
      */
     public void setId(int id)
@@ -101,7 +97,7 @@ public class Food
     /**
      * Mengatur value dari variable name
      *
-     * @param  name dengan tipe data string
+
      * @return Value pada parameter dimasukkan ke variable name
      */
     public void setName(String name)
@@ -113,7 +109,7 @@ public class Food
     /**
      * Mengatur value dari variable seller
      *
-     * @param  seller dengan tipe data string
+
      * @return Value pada parameter dimasukkan ke variable seller
      */
     public void setSeller(Seller seller)
@@ -125,7 +121,7 @@ public class Food
     /**
      * Mengatur value dari variable price
      *
-     * @param  price dengan tipe data integer
+
      * @return Value pada parameter dimasukkan ke variable price
      */
     public void setPrice(int price)
@@ -137,7 +133,7 @@ public class Food
     /**
      * Mengatur value dari variable string
      *
-     * @param  category dengan tipe data string
+
      * @return Value pada parameter dimasukkan ke variable string
      */
     public void setCategory(FoodCategory category)
@@ -149,7 +145,7 @@ public class Food
     /**
      * Untuk print data variable pada class ini
      *
-    * @param  Variable dengan input dari salah satu method setter di atas
+
     * @return Isi dari variable yang ada. Tergantung pada variable apa yang dipanggil
     */
     //public void printData()
