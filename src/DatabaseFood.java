@@ -53,7 +53,7 @@ public class DatabaseFood
         for (Food foods : FOOD_DATABASE)
         {
 
-            if (foods.getId() == sellerId)
+            if (foods.getSeller().getId() == sellerId)
             {
                 dummyFoodList.add(foods);
             }
@@ -86,7 +86,7 @@ public class DatabaseFood
     {
       // put your code here
         FOOD_DATABASE.add(foods);
-        lastId = foods.getId()+1;
+        lastId = foods.getId();
         return true;
     }
 

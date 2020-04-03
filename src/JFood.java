@@ -14,16 +14,16 @@ public class JFood
     public static void main(String[] args)
     {
      Location location1 = new Location("Tanjung Priok", "Jakarta Utara", "Asik");
-     DatabaseSeller.addSeller (new Seller(DatabaseSeller.getLastId(),"Budi", "budi@gmail.com", "081234323", location1));
-     DatabaseCustomer.addCustomer (new Customer(DatabaseCustomer.getLastId(),"Galih", "galih@gmail.com", "Password1", 2020, 4, 2));
-     DatabaseCustomer.addCustomer (new Customer(DatabaseCustomer.getLastId(),"Galih", "galih@gmail.com", "Password1", 2020, 4, 2));
-     DatabaseCustomer.addCustomer (new Customer(DatabaseCustomer.getLastId(),"Pascal", "pascal@gmail.com", "Password1", 2020, 4, 2));
+     DatabaseSeller.addSeller (new Seller(DatabaseSeller.getLastId()+1,"Budi", "budi@gmail.com", "081234323", location1));
+     DatabaseCustomer.addCustomer (new Customer(DatabaseCustomer.getLastId()+1,"Galih", "galih@gmail.com", "Password1", 2020, 4, 2));
+     DatabaseCustomer.addCustomer (new Customer(DatabaseCustomer.getLastId()+1,"Galih", "galih@gmail.com", "Password1", 2020, 4, 2));
+     DatabaseCustomer.addCustomer (new Customer(DatabaseCustomer.getLastId()+1,"Pascal", "pascal@gmail.com", "Password1", 2020, 4, 2));
 
      System.out.println("\nCustomer\n");
      System.out.println(DatabaseCustomer.getCustomerDatabase()+"\n");
-     DatabaseFood.addFood(new Food(DatabaseFood.getLastId(), "Espresso", DatabaseSeller.getSellerById(0), 3000, FoodCategory.Coffee));
-     DatabaseFood.addFood(new Food(DatabaseFood.getLastId(), "Mocachino", DatabaseSeller.getSellerById(0), 3000, FoodCategory.Coffee));
-     DatabaseFood.addFood(new Food(DatabaseFood.getLastId(), "Sushi", DatabaseSeller.getSellerById(0), 3000, FoodCategory.Japanese));
+     DatabaseFood.addFood(new Food(DatabaseFood.getLastId()+1, "Espresso", DatabaseSeller.getSellerById(0), 3000, FoodCategory.Coffee));
+     DatabaseFood.addFood(new Food(DatabaseFood.getLastId()+1, "Mocachino", DatabaseSeller.getSellerById(0), 3000, FoodCategory.Coffee));
+     DatabaseFood.addFood(new Food(DatabaseFood.getLastId()+1, "Sushi", DatabaseSeller.getSellerById(0), 3000, FoodCategory.Japanese));
      System.out.println("\nCoffee\n");
      System.out.println(DatabaseFood.getFoodByCategory(FoodCategory.Coffee)+"\n");
      System.out.println("\nJapanese\n");
