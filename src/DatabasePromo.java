@@ -52,21 +52,21 @@ public class DatabasePromo {
         return dummyPromo;
     }
 
-    public static boolean addPromo(Promo promo) {
+    public static boolean addPromo(Promo promo)
+    {
 
-        boolean promoStatus = false;
-        for (int i = 0; i < PROMO_DATABASE.size(); i++) {
-            Promo promo1 = PROMO_DATABASE.get(i);
-            if (promo1.getCode() != promo.getCode()) {
-                PROMO_DATABASE.add(promo);
-                lastId = promo.getId();
-                return true;
-            } else {
-                promoStatus = false;
+        for (Promo promo1 : PROMO_DATABASE)
+        {
+            if (promo1.getCode().equals(promo.getCode()))
+            {
+                return false;
             }
-        }
 
-        return promoStatus;
+        }
+        PROMO_DATABASE.add(promo);
+        lastId = promo.getId();
+        return true;
+
     }
 
     public static boolean activatePromo(int id) {

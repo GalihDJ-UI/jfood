@@ -52,11 +52,19 @@ public class DatabaseCustomer
     }
 
 
-    public static boolean addCustomer(Customer customer){
+    public static boolean addCustomer(Customer customer)
+    {
+        for(Customer customer1 : CUSTOMER_DATABASE)
+        {
+            if (customer1.getEmail().equals(customer.getEmail()))
+            {
+                return false;
+            }
+        }
         CUSTOMER_DATABASE.add(customer);
         lastId = customer.getId() + 1;
-        return false;
-        }
+        return true;
+    }
 
     
 
