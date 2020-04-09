@@ -1,5 +1,5 @@
 import java.util.*;
-import java.util.regex.*; 
+import java.util.regex.*;
 import java.text.*;
 
 /**
@@ -52,7 +52,7 @@ public class JFood
      DatabasePromo.addPromo(new Promo( DatabasePromo.getLastId()+1, "22W51", 10000, 20000, false));
      DatabasePromo.addPromo(new Promo( DatabasePromo.getLastId()+1, "22W51", 10000, 20000, true));
 
-     DatabaseInvoice.addInvoice(new CashlessInvoice(DatabaseInvoice.getLastId()+1, list2, DatabaseCustomer.getCustomerById(2), DatabasePromo.getPromoById(1)));
+
 
      DatabasePromo.activatePromo(1);
      System.out.println("\nPromo:");
@@ -68,12 +68,7 @@ public class JFood
       invoice.setTotalPrice();
      }
 
-     System.out.println("");
-     for (Invoice invoice : DatabaseInvoice.getInvoiceDatabase())
-     {
-      System.out.println(invoice.toString() + "\n");
-     }
-
+     
      for (Invoice invoice : DatabaseInvoice.getInvoiceByCustomer(1))
      {
       invoice.setInvoiceStatus(InvoiceStatus.Finished);
@@ -81,6 +76,8 @@ public class JFood
 
      DatabaseInvoice.changeInvoiceStatus(DatabaseInvoice.getLastId(), InvoiceStatus.Finished);
      DatabasePromo.activatePromo(1);
+     DatabaseInvoice.addInvoice(new CashlessInvoice(DatabaseInvoice.getLastId()+1, list2, DatabaseCustomer.getCustomerById(2), DatabasePromo.getPromoById(1)));
+
 
      for (Invoice invoice : DatabaseInvoice.getInvoiceDatabase())
      {
@@ -140,42 +137,42 @@ public class JFood
      //DatabaseInvoice.addInvoice(new CashlessInvoice(DatabaseInvoice.getLastId()+1, list1, DatabaseCustomer.getCustomerById(2)), DatabasePromo.getPromoById(1));
      //Food food1 = new Food(22, "Espresso", seller1, 2000, FoodCategory.Coffee);
      //Food food2 = new Food(23, "Arabica", seller1, 20000, FoodCategory.Coffee);
-     
+
      //customer1.setEmail("bagus@mail.com");
      //customer1.setPassword("Password1");
      //System.out.println(customer1.toString());
      //System.out.println(customer2.toString());
      //System.out.println(customer3.toString());
-     
+
      //CashlessInvoice cashless1 = new CashlessInvoice(1, food1, customer1, InvoiceStatus.Ongoing);
      //CashlessInvoice cashless2 = new CashlessInvoice(2, food1, "12 Maret 2020", customer1, InvoiceStatus.Ongoing, promo1);
      //CashlessInvoice cashless3 = new CashlessInvoice(3, food2, "12 Maret 2020", customer1, InvoiceStatus.Ongoing, promo1);
-     //Invoice invoice = new Invoice(24, 25, "1 Maret 2020", customer1, 2000, InvoiceStatus.Finished);  
+     //Invoice invoice = new Invoice(24, 25, "1 Maret 2020", customer1, 2000, InvoiceStatus.Finished);
 
      //CashInvoice cash1 = new CashInvoice (1, food1, customer1, InvoiceStatus.Finished);
      //CashInvoice cash2 = new CashInvoice (2, food2, "13 Maret 2020", customer1, InvoiceStatus.Finished, 5000);
-     
+
       //System.out.println(food1.getCategory());
       //System.out.println(payment.toString());
       //seller1.printData();
       //seller1.setName("Pascal");
       //seller1.printData();
-      
-      
+
+
      //cash1.setTotalPrice();
      //cash2.setTotalPrice();
-      
+
      //cash1.printData();
      //cash2.printData();
-     
+
      //cashless1.setTotalPrice();
      //cashless2.setTotalPrice();
      //cashless3.setTotalPrice();
      //System.out.println(cash1.toString());
      //System.out.println(cashless1.toString());
-      
+
      //cashless1.printData();
      //cashless2.printData();
      //cashless3.printData();
-      
+
 

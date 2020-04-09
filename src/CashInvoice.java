@@ -98,7 +98,8 @@ public class CashInvoice extends Invoice {
         string = string +
                 "\nTotal Price: " + super.getTotalPrice() +
                 "\nCustomer: " + super.getCustomer().getName() +
-                "\nInvoice Status: " + getInvoiceStatus();
+                "\nInvoice Status: " + getInvoiceStatus()+
+                "\nPayment Type: " + PAYMENT_TYPE ;
         return string;
     }
 }
