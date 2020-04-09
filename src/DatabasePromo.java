@@ -8,53 +8,46 @@ import java.util.ArrayList;
  */
 public class DatabasePromo {
     // instance variables - replace the example below with your own
-    private static ArrayList<Promo> PROMO_DATABASE = new ArrayList<Promo>();
+    private static ArrayList<Promo> PROMO_DATABASE = new ArrayList<Promo>(0);
     private static int lastId = 0;
 
     /**
      * Constructor for objects of class DatabasePromo
      */
 
-    public static ArrayList<Promo> getPromoDatabase() {
+    public static ArrayList<Promo> getPromoDatabase()
+    {
         // put your code here
         return PROMO_DATABASE;
     }
 
-    public static int getLastId() {
+    public static int getLastId()
+    {
         return lastId;
     }
 
-    public static Promo getPromoById(int id) {
-        Promo dummyPromo = null;
-        for (Promo promo : PROMO_DATABASE)
+    public static Promo getPromoById(int id)
+    {
+        for(Promo promo : PROMO_DATABASE)
         {
-            if (promo.getId() == id)
+            if(promo.getId() == id)
             {
-                dummyPromo = promo;
-            }
-            else
-            {
-                dummyPromo = promo;
+                return promo;
             }
         }
-        return dummyPromo;
+        return null;
     }
 
-    public static Promo getPromoByCode(String code) {
-        Promo dummyPromo = null;
+    public static Promo getPromoByCode(String code)
+    {
         for (Promo promo : PROMO_DATABASE)
         {
-            if (promo.getCode() == code)
+            if (promo.getCode().equals(code))
             {
-                dummyPromo = promo;
-            }
-
-            else
-            {
-                dummyPromo = promo;
+                return promo;
             }
         }
-        return dummyPromo;
+        return null;
     }
 
     public static boolean addPromo(Promo promo)
@@ -74,7 +67,8 @@ public class DatabasePromo {
 
     }
 
-    public static boolean activatePromo(int id) {
+    public static boolean activatePromo(int id)
+    {
         for (Promo promo : PROMO_DATABASE)
         {
             if (promo.getId() == id) {
@@ -86,35 +80,32 @@ public class DatabasePromo {
         return false;
     }
 
-        public static boolean deactivatePromo(int id) {
-            for (Promo promo : PROMO_DATABASE)
-            {
-                if (promo.getId() == id)
-                {
-                    promo.setActive(false);
-                    return true;
-                }
-
-            }
-            return false;
-        }
-
-        public static boolean removePromo(int id)
+    public static boolean deactivatePromo(int id)
+    {
+        for (Promo promo : PROMO_DATABASE)
         {
-            boolean promoStatus = false;
+            if (promo.getId() == id)
+            {
+                promo.setActive(false);
+                return true;
+            }
+
+        }
+        return false;
+    }
+
+    public static boolean removePromo(int id)
+        {
+
             for (Promo promo : PROMO_DATABASE)
             {
                 if (promo.getId() == id)
                 {
                     PROMO_DATABASE.remove(promo);
-                    promoStatus = true;
+                    return true;
                 }
-                else
-                {
-                    promoStatus = false;
-                }
-            }
 
-            return promoStatus;
+            }
+            return false;
         }
     }

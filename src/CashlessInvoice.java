@@ -15,14 +15,14 @@ public class CashlessInvoice extends Invoice {
     /**
      * Constructor for objects of class ClasslessInvoice
      */
-    public CashlessInvoice(int id, ArrayList<Food> foods, Customer customer, InvoiceStatus invoiceStatus) {
+    public CashlessInvoice(int id, ArrayList<Food> foods, Customer customer) {
         // initialise instance variables;
-        super(id, foods, customer, invoiceStatus);
+        super(id, foods, customer);
     }
 
-    public CashlessInvoice(int id, ArrayList<Food> foods, Customer customer, InvoiceStatus invoiceStatus, Promo promo) {
+    public CashlessInvoice(int id, ArrayList<Food> foods, Customer customer, Promo promo) {
         // initialise instance variables;
-        super(id, foods, customer, invoiceStatus);
+        super(id, foods, customer);
         this.promo = promo;
     }
 
@@ -42,23 +42,22 @@ public class CashlessInvoice extends Invoice {
         return promo;
     }
 
-    public void setPromo() {
+    public void setPromo(Promo promo) {
         // put your code here
         this.promo = promo;
     }
 
-    public void setTotalPrice() {
-//        // put your code here
-//        if ((promo != null) && (promo.getActive() == true) && (getFoods().getPrice() >= getPromo().getMinPrice()))
-//        {
-//          super.totalPrice = (getFoods().getPrice()) - (promo.getDiscount());
-//        }
-
-//        else
-//        {
-//          super.totalPrice = getFoods().getPrice();
-//        }
-
+    public void setTotalPrice()
+    {
+        super.totalPrice = 0;
+        for (Food foodList : getFoods())
+        {
+            super.totalPrice = super.totalPrice + foodList.getPrice();
+        }
+        if (promo != null && promo.getActive() == true && super.totalPrice > promo.getMinPrice());
+        {
+            totalPrice = totalPrice - promo.getDiscount();
+        }
     }
 
     //public void printData()
@@ -80,38 +79,40 @@ public class CashlessInvoice extends Invoice {
     //}
     public String toString()
     {
-        StringBuilder foods = new StringBuilder();
-        for (Food foodList : getFoods()) {
-            foods.append(foodList.getName()).append(", ");
-        }
-        foods = new StringBuilder(foods.substring(0, foods.length() - 2));
-        setTotalPrice();
         String timeNow = "";
         SimpleDateFormat sdf = new SimpleDateFormat("dd MMMM yyyy");
         timeNow = sdf.format(super.getDate().getTime());
-        if(promo == null  || !promo.getActive() || super.totalPrice  < getPromo().getMinPrice())
+
+        String a = "";
+        for(Food foodList : getFoods())
+        {
+            a += foodList.getName();
+        }
+        setTotalPrice();
+
+        if(promo == null || !promo.getActive() || super.totalPrice  < getPromo().getMinPrice())
         {
             return "==========INVOICE==========\n" +
-                    "ID : " + super.getId() +
-                    "\nFood" + foods +
+                    "ID: " + super.getId() +
+                    "\nFood:" + a +
                     "\nDate: " + timeNow +
                     "\nCustomer: " + super.getCustomer().getName() +
                     "\nTotal Price: " + getTotalPrice() +
-                    "\nStatus: " + super.getInvoiceStatus() +
+                    "\nStatus: " + getInvoiceStatus() +
                     "\nPayment Type: " + PAYMENT_TYPE ;
 
         }
-
         else
         {
             return "==========INVOICE==========\n" +
                     "ID : " + super.getId() +
-                    "\nFood: " + foods +
+                    "\nFood: " + a +
                     "\nDate: " + timeNow +
                     "\nPromo: " + promo.getCode() +
                     "\nCustomer: " + super.getCustomer().getName() +
                     "\nTotal Price: " + getTotalPrice() +
-                    "\nStatus: " + super.getInvoiceStatus() +
+                    "\nStatus: " + getInvoiceStatus() +
                     "\nPayment Type: " + PAYMENT_TYPE ;
         }
-}}
+    }
+}

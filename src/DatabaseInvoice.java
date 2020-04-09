@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class DatabaseInvoice
 {
-    private static ArrayList<Invoice> INVOICE_DATABASE = new ArrayList<>();
+    private static ArrayList<Invoice> INVOICE_DATABASE = new ArrayList<Invoice>();
     private static int lastId = 0;
 
     public static ArrayList<Invoice> getInvoiceDatabase()
@@ -18,21 +18,14 @@ public class DatabaseInvoice
 
     public static Invoice getInvoiceById(int id)
     {
-        Invoice dummyInv = null;
         for (Invoice invoice : INVOICE_DATABASE)
         {
             if (invoice.getId() == id)
             {
-                dummyInv = invoice;
-            }
-
-            else
-            {
-                dummyInv = invoice;
+                return invoice;
             }
         }
-
-        return dummyInv;
+        return null;
     }
 
     public static ArrayList<Invoice> getInvoiceByCustomer(int customerId)
@@ -51,9 +44,10 @@ public class DatabaseInvoice
 
     public static boolean addInvoice(Invoice invoice)
     {
+        int customerId = invoice.getCustomer().getId();
         for (Invoice invoice1 : INVOICE_DATABASE)
         {
-            if (invoice1.getInvoiceStatus().equals(InvoiceStatus.Ongoing))
+            if (invoice1.getCustomer().getId() == customerId && invoice1.getInvoiceStatus() == InvoiceStatus.Ongoing)
             {
                 return false;
             }
@@ -67,9 +61,9 @@ public class DatabaseInvoice
     {
         for (Invoice invoice : INVOICE_DATABASE)
         {
-            if (invoice.getId() == id && invoice.getInvoiceStatus().equals(InvoiceStatus.Ongoing))
+            if(invoice.getId() == id && invoice.getInvoiceStatus().equals(InvoiceStatus.Ongoing))
             {
-                invoice.setInvoiceStatus(InvoiceStatus.Finished);
+                invoice.setInvoiceStatus(invoiceStatus);
                 return true;
             }
         }

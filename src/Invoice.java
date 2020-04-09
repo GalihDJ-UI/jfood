@@ -11,7 +11,7 @@ public abstract class Invoice
 {
     // instance variables - replace the example below with your own
     private int id;
-    private ArrayList<Food> foods;
+    private ArrayList<Food> foods = new ArrayList<Food>();
     private Calendar date;
     protected int totalPrice;
     private Customer customer;
@@ -21,7 +21,7 @@ public abstract class Invoice
      * Constructor for objects of class Invoice
 
      */
-    public Invoice(int id, ArrayList<Food> foods, Customer customer, InvoiceStatus invoiceStatus)
+    public Invoice(int id, ArrayList<Food> foods, Customer customer)
     {
         // initialise instance variables
         this.id = id;
@@ -177,6 +177,13 @@ public abstract class Invoice
      * @param  
      * @return 
      */
+
+    public void status(InvoiceStatus status)
+    {
+        this.invoiceStatus = InvoiceStatus.Ongoing;
+
+    }
+
     public void setInvoiceStatus(InvoiceStatus invoiceStatus)
     {
         // put your code here

@@ -15,17 +15,17 @@ public class CashInvoice extends Invoice {
     /**
      * Constructor for objects of class CashInvoice
      */
-    public CashInvoice(int id, ArrayList<Food> foods, Customer customer, InvoiceStatus invoiceStatus) {
+    public CashInvoice(int id, ArrayList<Food> foods, Customer customer) {
         // initialise instance variables
-        super(id, foods, customer, invoiceStatus);
+        super(id, foods, customer);
     }
 
     /**
      * Constructor for objects of class CashInvoice
      */
-    public CashInvoice(int id, ArrayList<Food> foods, Customer customer, InvoiceStatus invoiceStatus, int deliveryFee) {
+    public CashInvoice(int id, ArrayList<Food> foods, Customer customer, int deliveryFee) {
         // initialise instance variables
-        super(id, foods, customer, invoiceStatus);
+        super(id, foods, customer);
         this.deliveryFee = deliveryFee;
     }
 
@@ -50,18 +50,14 @@ public class CashInvoice extends Invoice {
         this.deliveryFee = deliveryFee;
     }
 
-    public void setTotalPrice() {
-        // put your code here
-        //       if ((getDeliveryFee() > 0))
-//        {
-//          super.totalPrice = (getFoods().getPrice()) + getDeliveryFee();
-//        }
-
-//        else
-//        {
-//          super.totalPrice = getFoods().getPrice();
-//        }
-
+    public void setTotalPrice()
+    {
+        super.totalPrice = 0;
+        for (Food foodList : getFoods())
+        {
+            super.totalPrice = super.totalPrice + foodList.getPrice();
+        }
+        super.totalPrice = super.totalPrice + deliveryFee;
     }
 
     //public void printData()
@@ -76,30 +72,33 @@ public class CashInvoice extends Invoice {
     //   System.out.println("Status: "+getInvoiceStatus()); 
     //   System.out.println("Payment Type: "+getPaymentType());
     //}
-    public String toString() {
+    public String toString()
+    {
         String string = "";
         Date date = getDate().getTime();
-        SimpleDateFormat formatter = new SimpleDateFormat("dd MMMMM yyyy");
-        String formatted = formatter.format(date);
+        String timeNow = "";
+        SimpleDateFormat sdf = new SimpleDateFormat("dd MMMM yyyy");
+        timeNow = sdf.format(super.getDate().getTime());
 
-        //Temporal Variable
-        String foodName = "";
-        for (Food foodList : super.getFoods()) {
-            foodName += foodList.getName();
+        StringBuilder foods = new StringBuilder();
+        for (Food foodList : getFoods())
+        {
+            foods.append(foodList.getName()).append(", ");
         }
+        foods = new StringBuilder(foods.substring(0, foods.length() - 2));
 
-        //Stringy
         string = "\n===========INVOICE==============" +
-                "\nId = " + super.getId() +
-                "\nDate = " + date +
-                "\nFood = " + foodName;
-        // Delivery Fee Cases
+                "\nID: " + super.getId() +
+                "\nDate: " + timeNow +
+                "\nFood: " + foods;
+
         if (deliveryFee > 0) {
             string = string + "\nDelivery Fee = " + deliveryFee;
         }
         string = string +
-                "\nTotal Price = " + super.getTotalPrice() +
-                "\nCustomer = " + super.getCustomer();
+                "\nTotal Price: " + super.getTotalPrice() +
+                "\nCustomer: " + super.getCustomer().getName() +
+                "\nInvoice Status: " + getInvoiceStatus();
         return string;
     }
 }
