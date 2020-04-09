@@ -87,7 +87,7 @@ public class CashInvoice extends Invoice {
         }
         foods = new StringBuilder(foods.substring(0, foods.length() - 2));
 
-        string = "\n===========INVOICE==============" +
+        string = "\n==========INVOICE==========" +
                 "\nID: " + super.getId() +
                 "\nDate: " + timeNow +
                 "\nFood: " + foods;

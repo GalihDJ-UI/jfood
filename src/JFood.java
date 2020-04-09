@@ -68,7 +68,7 @@ public class JFood
       invoice.setTotalPrice();
      }
 
-     
+
      for (Invoice invoice : DatabaseInvoice.getInvoiceByCustomer(1))
      {
       invoice.setInvoiceStatus(InvoiceStatus.Finished);
