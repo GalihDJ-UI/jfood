@@ -26,24 +26,17 @@ public class DatabaseSeller
         return lastId;
     }
 
-    public static Seller getSellerById(int id)
+    public static Seller getSellerById(int id) throws SellerNotFoundException
     {
-        Seller dummySel = null;
-        for (int i = 0; i < SELLER_DATABASE.size(); i++)
+        for (Seller seller : SELLER_DATABASE)
         {
-            Seller seller = SELLER_DATABASE.get(i);
             if (seller.getId() == id)
             {
-                dummySel = seller;
-            }
-
-            else
-            {
-                dummySel = seller;
+                return seller;
             }
         }
 
-        return dummySel;
+        throw new SellerNotFoundException(id);
     }
 
     public static boolean addSeller(Seller seller)
@@ -54,7 +47,7 @@ public class DatabaseSeller
       return true;
     }
     
-    public static boolean removeSeller(int id)
+    public static boolean removeSeller(int id) throws SellerNotFoundException
     {
       // put your code here
         for (Seller seller : SELLER_DATABASE)
@@ -65,7 +58,7 @@ public class DatabaseSeller
                 return true;
             }
         }
-        return false;
+        throw new SellerNotFoundException(id);
     }
 
     

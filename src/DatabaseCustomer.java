@@ -31,43 +31,37 @@ public class DatabaseCustomer
         return lastId;
     }
 
-    public static  Customer getCustomerById(int id)
+    public static  Customer getCustomerById(int id) throws CustomerNotFoundException
     {
-        Customer dummyCus = null;
         for (Customer customer : CUSTOMER_DATABASE)
         {
             if (customer.getId() == id)
             {
-                dummyCus = customer;
-            }
-
-            else
-            {
-                dummyCus = customer;
+                return customer;
             }
         }
-
-        return dummyCus;
+        throw new CustomerNotFoundException(id);
     }
 
 
-    public static boolean addCustomer(Customer customer)
+    public static boolean addCustomer(Customer customer) throws EmailAlreadyExistException
     {
         for(Customer customer1 : CUSTOMER_DATABASE)
         {
             if (customer1.getEmail().equals(customer.getEmail()))
             {
-                return false;
+                throw new EmailAlreadyExistException(customer);
             }
         }
         CUSTOMER_DATABASE.add(customer);
         lastId = customer.getId();
         return true;
+
     }
 
     
 
-    public static boolean removeCustomer(int id)
+    public static boolean removeCustomer(int id) throws CustomerNotFoundException
     {
         for (Customer customer : CUSTOMER_DATABASE)
         {
@@ -80,6 +74,6 @@ public class DatabaseCustomer
 
         }
 
-        return false;
+        throw new CustomerNotFoundException(id);
     }
 }
