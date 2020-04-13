@@ -20,7 +20,7 @@ public class JFood
 
      DatabaseSeller.addSeller(new Seller(DatabaseSeller.getLastId() + 1, "Budi", "budi@gmail.com", "081234323", location1));
 
-     //Customer
+     //Try Customer
      try
      {
       DatabaseCustomer.addCustomer(new Customer(DatabaseCustomer.getLastId() + 1, "Galih", "galih@gmail.com", "Password1", 2020, 4, 2));
@@ -33,9 +33,9 @@ public class JFood
       System.out.println(e.getMessage());
      }
 
+     //Try Promo
      try
      {
-      DatabasePromo.addPromo(new Promo(DatabasePromo.getLastId() + 1, "22W51", 10000, 20000, true));
       DatabasePromo.addPromo(new Promo(DatabasePromo.getLastId() + 1, "22W51", 10000, 20000, true));
      }
      catch (PromoCodeAlreadyExistException e)
@@ -45,15 +45,43 @@ public class JFood
 
      try
      {
-      DatabaseFood.addFood(new Food(DatabaseFood.getLastId() + 1, "Espresso", DatabaseSeller.getSellerById(1), 20000, FoodCategory.Coffee));
-      DatabaseFood.addFood(new Food(DatabaseFood.getLastId() + 1, "Moccachino", DatabaseSeller.getSellerById(1), 20000, FoodCategory.Coffee));
+      DatabasePromo.addPromo(new Promo(DatabasePromo.getLastId() + 1, "22W51", 10000, 20000, true));
+     }
+     catch (PromoCodeAlreadyExistException e)
+     {
+      System.out.println(e.getMessage());
+     }
 
+     //Try food
+     try
+     {
+      DatabaseFood.addFood(new Food(DatabaseFood.getLastId() + 1, "Espresso", DatabaseSeller.getSellerById(1), 20000, FoodCategory.Coffee));
      }
      catch (SellerNotFoundException e)
      {
       System.out.println(e.getMessage());
      }
 
+     try
+     {
+      DatabaseFood.addFood(new Food(DatabaseFood.getLastId() + 1, "Moccachino", DatabaseSeller.getSellerById(1), 20000, FoodCategory.Coffee));
+     }
+     catch (SellerNotFoundException e)
+     {
+      System.out.println(e.getMessage());
+     }
+
+     try
+     {
+      DatabaseFood.addFood(new Food(DatabaseFood.getLastId() + 1, "Sushi", DatabaseSeller.getSellerById(1), 20000, FoodCategory.Japanese));
+     }
+     catch (SellerNotFoundException e)
+     {
+      System.out.println(e.getMessage());
+     }
+     //Separator
+
+     //Testing error catch
      try
      {
       DatabaseSeller.getSellerById(10);
@@ -89,6 +117,7 @@ public class JFood
      System.out.println(e.getMessage());
     }
 
+    //Test database promo
      System.out.println("\n===================YANG MASUK KE DATABASE PROMO: ====================\n");
      for (Promo promo : DatabasePromo.getPromoDatabase())
      {
@@ -106,10 +135,39 @@ public class JFood
       System.out.println(e.getMessage());
      }
 
+     ArrayList<Food> list2 = new ArrayList<Food>();
      try
      {
-      DatabaseInvoice.addInvoice(new CashlessInvoice(DatabaseInvoice.getLastId()+1, list1, DatabaseCustomer.getCustomerById(1), DatabasePromo.getPromoById(1)));
-      DatabaseInvoice.addInvoice(new CashlessInvoice(DatabaseInvoice.getLastId()+1, list1, DatabaseCustomer.getCustomerById(1), DatabasePromo.getPromoById(1)));
+      list2.add(DatabaseFood.getFoodById(3));
+     }
+     catch (FoodNotFoundException e)
+     {
+      System.out.println(e.getMessage());
+     }
+
+
+     //Try catch invoice
+     try
+     {
+      DatabaseInvoice.removeInvoice(10);
+     }
+     catch (InvoiceNotFoundException e)
+     {
+      System.out.println(e.getMessage());
+     }
+
+     try
+     {
+      DatabaseInvoice.getInvoiceById(10);
+     }
+     catch (InvoiceNotFoundException e)
+     {
+      System.out.println(e.getMessage());
+     }
+
+
+     try
+     {
       DatabaseInvoice.addInvoice(new CashlessInvoice(DatabaseInvoice.getLastId()+1, list1, DatabaseCustomer.getCustomerById(1), DatabasePromo.getPromoById(1)));
      }
 
@@ -123,11 +181,39 @@ public class JFood
       System.out.println(e2.getMessage());
      }
 
-     for (Invoice invoice : DatabaseInvoice.getInvoiceDatabase())
+     catch (OngoingInvoiceAlreadyExistsException e2)
      {
-      new Thread (new PriceCalculator(invoice)).start();
+      System.out.println(e2.getMessage());
      }
 
+     try
+     {
+      DatabaseInvoice.addInvoice(new CashInvoice(DatabaseInvoice.getLastId()+1, list2, DatabaseCustomer.getCustomerById(1), 10000));
+     }
+
+     catch (CustomerNotFoundException e1)
+     {
+      System.out.println(e1.getMessage());
+     }
+
+     catch (OngoingInvoiceAlreadyExistsException e2)
+     {
+      System.out.println(e2.getMessage());
+     }
+
+     //Try error
+
+
+
+     //Print invoice
+     for (Invoice invoice : DatabaseInvoice.getInvoiceDatabase())
+     {
+      System.out.println(invoice.toString() + "\n");
+     }
+    }
+
+
+}
      //System.out.println();
 
 
@@ -135,10 +221,8 @@ public class JFood
      //System.out.println(DatabaseCustomer.getCustomerDatabase()+"\n");
      //
 
-    }
      //Food
 
-}
      //DatabaseFood.addFood(new Food(DatabaseFood.getLastId() + 1, "Sushi", DatabaseSeller.getSellerById(1), 10000, FoodCategory.Japanese));
      //ArrayList<Food> list1 = new ArrayList<Food>();
      //list1.add(DatabaseFood.getFoodById(3));
