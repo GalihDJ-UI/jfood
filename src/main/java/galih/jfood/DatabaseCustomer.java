@@ -1,4 +1,8 @@
 package galih.jfood;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+
 import java.util.ArrayList;
 
 /**
@@ -74,7 +78,18 @@ public class DatabaseCustomer
             }
 
         }
-
         throw new CustomerNotFoundException(id);
+    }
+
+
+    public static Customer getCustomerLogin(String email, String password)
+    {
+        for (Customer customer : CUSTOMER_DATABASE){
+            if (customer.getEmail().equals(email) && customer.getPassword().equals(password))
+            {
+                return customer;
+            }
+        }
+        return null;
     }
 }
