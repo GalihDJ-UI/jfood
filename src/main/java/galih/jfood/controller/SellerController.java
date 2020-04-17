@@ -25,7 +25,7 @@ public class SellerController
         }
         catch (SellerNotFoundException e)
         {
-            e.getMessage();
+            System.out.println(e.getMessage());
             return null;
         }
         return seller;
@@ -48,7 +48,7 @@ public class SellerController
         }
         catch (Exception e)
         {
-            e.getMessage();
+            System.out.println(e.getMessage());
             return null;
         }
         return seller;

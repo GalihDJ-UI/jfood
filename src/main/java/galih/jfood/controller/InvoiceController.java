@@ -26,7 +26,7 @@ public class InvoiceController
         }
         catch (InvoiceNotFoundException e)
         {
-            e.getMessage();
+            System.out.println(e.getMessage());
             return null;
         }
         return invoice;
@@ -42,7 +42,7 @@ public class InvoiceController
         }
         catch (Exception e)
         {
-            e.getMessage();
+            System.out.println(e.getMessage());
             return null;
         }
         return invoice;
@@ -60,7 +60,7 @@ public class InvoiceController
 
         catch (Exception e)
         {
-            e.getMessage();
+            System.out.println(e.getMessage());
             return null;
         }
         return invoice;
@@ -75,7 +75,7 @@ public class InvoiceController
         }
         catch (InvoiceNotFoundException e)
         {
-            e.getMessage();
+            System.out.println(e.getMessage());
             return false;
         }
         return true;
@@ -93,7 +93,7 @@ public class InvoiceController
         }
         catch (OngoingInvoiceAlreadyExistsException e)
         {
-            e.getMessage();
+            System.out.println(e.getMessage());
             return null;
         }
         invoice.setTotalPrice();
@@ -112,7 +112,7 @@ public class InvoiceController
         }
         catch (OngoingInvoiceAlreadyExistsException e)
         {
-            e.getMessage();
+            System.out.println(e.getMessage());
             return null;
         }
         return invoice;

@@ -25,7 +25,7 @@ public class CustomerController
         }
         catch (CustomerNotFoundException e)
         {
-            e.getMessage();
+            System.out.println(e.getMessage());
             return null;
         }
         return customer;
@@ -44,7 +44,7 @@ public class CustomerController
         }
         catch (EmailAlreadyExistException e)
         {
-            e.getMessage();
+            System.out.println(e.getMessage());
             return null;
         }
         return customer;
@@ -61,7 +61,7 @@ public class CustomerController
         }
         catch (Exception e)
         {
-            e.getMessage();
+            System.out.println(e.getMessage());
             return null;
         }
         return customer;

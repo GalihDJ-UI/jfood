@@ -39,7 +39,7 @@ public class PromoController
 
         catch (PromoCodeAlreadyExistException e)
         {
-            e.getMessage();
+            System.out.println(e.getMessage());
             return null;
         }
         return promo;
