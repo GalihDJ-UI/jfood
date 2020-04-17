@@ -24,7 +24,7 @@ public class FoodController
         }
         catch (FoodNotFoundException e)
         {
-            e.getMessage();
+            System.out.println(e.getMessage());
             return null;
         }
         return food;
@@ -40,7 +40,7 @@ public class FoodController
         }
         catch (Exception e)
         {
-            e.getMessage();
+            System.out.println(e.getMessage());
             return null;
         }
         return food;
@@ -57,7 +57,7 @@ public class FoodController
 
         catch (Exception e)
         {
-            e.getMessage();
+            System.out.println(e.getMessage());
             return null;
         }
         return food;
@@ -77,7 +77,7 @@ public class FoodController
 
         catch (Exception e)
         {
-            e.getMessage();
+            System.out.println(e.getMessage());
             return null;
         }
         return food;

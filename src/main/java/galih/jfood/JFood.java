@@ -10,6 +10,25 @@ public class JFood
    public static void main(String[] args)
    {
 
+       //Customer
+       try
+       {
+           DatabaseCustomer.addCustomer(new Customer(DatabaseCustomer.getLastId() + 1, "Galih", "galih@gmail.com", "Password1", 2020, 4, 2));
+       }
+       catch (EmailAlreadyExistException e)
+       {
+           System.out.println(e.getMessage());
+       }
+
+       try
+       {
+           DatabaseCustomer.addCustomer(new Customer(DatabaseCustomer.getLastId() + 1, "Siraj", "siraj@gmail.com", "Password1", 2020, 4, 9));
+       }
+       catch (EmailAlreadyExistException e)
+       {
+           System.out.println(e.getMessage());
+       }
+
        //Location
        Location location1 = new Location("Tanjung Priok", "Jakarta Utara", "Asik");
        Location location2 = new Location("Depok", "Jawa Barat", "Panas");
