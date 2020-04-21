@@ -3,7 +3,7 @@ package galih.jfood.controller;
 import galih.jfood.*;
 import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
-
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RequestMapping("/food")
 @RestController
 

@@ -76,7 +76,24 @@ public class JFood
            System.out.println(e.getMessage());
        }
 
+       //Promo
+       try
+       {
+           DatabasePromo.addPromo(new Promo(DatabasePromo.getLastId() + 1, "22W51", 10000, 20000, true));
+       }
+       catch (PromoCodeAlreadyExistException e)
+       {
+           System.out.println(e.getMessage());
+       }
 
+       try
+       {
+           DatabasePromo.addPromo(new Promo(DatabasePromo.getLastId() + 1, "22W51", 10000, 20000, true));
+       }
+       catch (PromoCodeAlreadyExistException e)
+       {
+           System.out.println(e.getMessage());
+       }
 
        SpringApplication.run(JFood.class, args);
    }
