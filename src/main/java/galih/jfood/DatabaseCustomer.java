@@ -25,18 +25,33 @@ public class DatabaseCustomer
     //}
 
 
+    /**
+     * An example of a method - replace this comment with your own
+     *
+     * @return the sum of x and y
+     */
     public static ArrayList<Customer> getCustomerDatabase()
     {
         // put your code here
         return CUSTOMER_DATABASE;
     }
 
+    /**
+     * An example of a method - replace this comment with your own
+     *
+     * @return the sum of x and y
+     */
     public static int getLastId()
     {
         return lastId;
     }
 
-    public static  Customer getCustomerById(int id) throws CustomerNotFoundException
+    /**
+     * An example of a method - replace this comment with your own
+     *
+     * @return the sum of x and y
+     */
+    public static Customer getCustomerById(int id) throws CustomerNotFoundException
     {
         for (Customer customer : CUSTOMER_DATABASE)
         {
@@ -48,7 +63,11 @@ public class DatabaseCustomer
         throw new CustomerNotFoundException(id);
     }
 
-
+    /**
+     * An example of a method - replace this comment with your own
+     *
+     * @return the sum of x and y
+     */
     public static boolean addCustomer(Customer customer) throws EmailAlreadyExistException
     {
         for(Customer customer1 : CUSTOMER_DATABASE)
@@ -61,11 +80,14 @@ public class DatabaseCustomer
         CUSTOMER_DATABASE.add(customer);
         lastId = customer.getId();
         return true;
-
     }
 
-    
 
+    /**
+     * An example of a method - replace this comment with your own
+     *
+     * @return the sum of x and y
+     */
     public static boolean removeCustomer(int id) throws CustomerNotFoundException
     {
         for (Customer customer : CUSTOMER_DATABASE)
@@ -82,6 +104,11 @@ public class DatabaseCustomer
     }
 
 
+    /**
+     * An example of a method - replace this comment with your own
+     *
+     * @return the sum of x and y
+     */
     public static Customer getCustomerLogin(String email, String password)
     {
         for (Customer customer : CUSTOMER_DATABASE){

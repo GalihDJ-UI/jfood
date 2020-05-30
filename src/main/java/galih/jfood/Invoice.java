@@ -185,6 +185,11 @@ public abstract class Invoice
 
     }
 
+    /**
+     * Mengatur value dari variable seller
+     *
+     * @return Value pada parameter dimasukkan ke variable seller
+     */
     public void setInvoiceStatus(InvoiceStatus invoiceStatus)
     {
         // put your code here
@@ -207,9 +212,12 @@ public abstract class Invoice
       //System.out.println("Total Price: "+totalPrice);
       //System.out.println("Status: "+status); 
     //}
-    
+
+    /**
+     * Mengatur value dari variable seller
+     *
+     */
     public abstract String toString();
     {
-
     }
 }

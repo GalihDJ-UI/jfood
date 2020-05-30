@@ -99,7 +99,7 @@ public class Location
      * Untuk print data variable pada class ini
      *
      * @param  Variable dengan input dari salah satu method setter di atas
-     * @return Isi dari variable yang ada. Tergantung pada variable apa yang dipanggil
+     * @return isi variable province, city, dan description
      */
     //public void printData()
     //{

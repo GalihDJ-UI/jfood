@@ -36,7 +36,12 @@ public class Customer
         this.name = name;
         this.joinDate = joinDate;
     }
-    
+
+    /**
+     * An example of a method - replace this comment with your own
+     *
+     * @return the sum of x and y
+     */
     public Customer(int id, String name, String email, String password, 
     int year, int month, int dayOfMonth)
     {
@@ -47,7 +52,12 @@ public class Customer
         setPassword(password);
         this.joinDate = new GregorianCalendar (year, month-1, dayOfMonth);
     }
-    
+
+    /**
+     * An example of a method - replace this comment with your own
+     *
+     * @return the sum of x and y
+     */
     public Customer(int id, String name, String email, String password)
     {
         // initialise instance variables
@@ -178,13 +188,17 @@ public class Customer
      * Mengatur value dari variable joinDate
      *
      * @param  joinDate dengan tipe data string
-     * @return Value pada parameter dimasukkan ke variable joinDate
      */
     public void setJoinDate(Calendar joinDate)
     {
       this.joinDate = joinDate; 
     }
-    
+
+    /**
+     * Mengatur value dari variable joinDate
+     *
+     * @param  joinDate dengan tipe data string
+     */
     public void setJoinDate(int year, int month, int dayOfMonth)
     {
       this.joinDate = new GregorianCalendar (year, month-1, dayOfMonth);

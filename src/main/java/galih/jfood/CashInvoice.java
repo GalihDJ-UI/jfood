@@ -11,12 +11,13 @@ import java.text.*;
 public class CashInvoice extends Invoice {
     // instance variables - replace the example below with your own
     private static final PaymentType PAYMENT_TYPE = PaymentType.Cash;
-    private int deliveryFee;
+    private int deliveryFee = 5000;
 
     /**
      * Constructor for objects of class CashInvoice
      */
-    public CashInvoice(int id, ArrayList<Food> foods, Customer customer) {
+    public CashInvoice(int id, ArrayList<Food> foods, Customer customer)
+    {
         // initialise instance variables
         super(id, foods, customer);
     }
@@ -24,7 +25,8 @@ public class CashInvoice extends Invoice {
     /**
      * Constructor for objects of class CashInvoice
      */
-    public CashInvoice(int id, ArrayList<Food> foods, Customer customer, int deliveryFee) {
+    public CashInvoice(int id, ArrayList<Food> foods, Customer customer, int deliveryFee)
+    {
         // initialise instance variables
         super(id, foods, customer);
         this.deliveryFee = deliveryFee;
@@ -36,21 +38,39 @@ public class CashInvoice extends Invoice {
 
      * @return the sum of x and y
      */
-    public PaymentType getPaymentType() {
+    public PaymentType getPaymentType()
+    {
         // put your code here
         return PAYMENT_TYPE;
     }
 
-    public int getDeliveryFee() {
+    /**
+     * An example of a method - replace this comment with your own
+     *
+     * @return the sum of x and y
+     */
+    public int getDeliveryFee()
+    {
         // put your code here
         return deliveryFee;
     }
 
-    public void setDeliveryFee(int deliveryFee) {
+    /**
+     * An example of a method - replace this comment with your own
+     *
+     * @return the sum of x and y
+     */
+    public void setDeliveryFee(int deliveryFee)
+    {
         // put your code here
         this.deliveryFee = deliveryFee;
     }
 
+    /**
+     * An example of a method - replace this comment with your own
+     *
+     * @return the sum of x and y
+     */
     public void setTotalPrice()
     {
         super.totalPrice = 0;
@@ -73,6 +93,12 @@ public class CashInvoice extends Invoice {
     //   System.out.println("Status: "+getInvoiceStatus()); 
     //   System.out.println("Payment Type: "+getPaymentType());
     //}
+
+    /**
+     * An example of a method - replace this comment with your own
+     *
+     * @return the sum of x and y
+     */
     public String toString()
     {
         String string = "";
@@ -93,7 +119,8 @@ public class CashInvoice extends Invoice {
                 "\nDate: " + timeNow +
                 "\nFood: " + foods;
 
-        if (deliveryFee > 0) {
+        if (deliveryFee > 0)
+        {
             string = string + "\nDelivery Fee = " + deliveryFee;
         }
         string = string +

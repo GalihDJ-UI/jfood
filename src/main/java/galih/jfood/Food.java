@@ -109,7 +109,6 @@ public class Food
     /**
      * Mengatur value dari variable seller
      *
-
      * @return Value pada parameter dimasukkan ke variable seller
      */
     public void setSeller(Seller seller)
@@ -121,7 +120,6 @@ public class Food
     /**
      * Mengatur value dari variable price
      *
-
      * @return Value pada parameter dimasukkan ke variable price
      */
     public void setPrice(int price)
@@ -133,7 +131,6 @@ public class Food
     /**
      * Mengatur value dari variable string
      *
-
      * @return Value pada parameter dimasukkan ke variable string
      */
     public void setCategory(FoodCategory category)
@@ -158,7 +155,12 @@ public class Food
     //  System.out.println("Price: "+price);
     //  System.out.println("Category: "+category); 
     //}
-    
+
+    /**
+     * Untuk print data variable pada class ini
+     *
+     * @return Isi dari variable yang ada. Tergantung pada variable apa yang dipanggil
+     */
     public String toString()
     {
      return "Id = "+getId()+"\nNama = "+getName()+"\nSeller = "+getSeller().getName()+"\nCity = "+getSeller().getLocation().getCity()+"\nPrice = "+getPrice()+"\nCategory = "+getCategory();

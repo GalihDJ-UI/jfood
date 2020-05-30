@@ -22,11 +22,21 @@ public class DatabasePromo {
         return PROMO_DATABASE;
     }
 
+    /**
+     * An example of a method - replace this comment with your own
+     *
+     * @return the sum of x and y
+     */
     public static int getLastId()
     {
         return lastId;
     }
 
+    /**
+     * An example of a method - replace this comment with your own
+     *
+     * @return the sum of x and y
+     */
     public static Promo getPromoById(int id) throws PromoNotFoundException
     {
         for(Promo promo : PROMO_DATABASE)
@@ -39,6 +49,11 @@ public class DatabasePromo {
         throw new PromoNotFoundException(id);
     }
 
+    /**
+     * An example of a method - replace this comment with your own
+     *
+     * @return the sum of x and y
+     */
     public static Promo getPromoByCode(String code)
     {
         for (Promo promo : PROMO_DATABASE)
@@ -51,6 +66,11 @@ public class DatabasePromo {
         return null;
     }
 
+    /**
+     * An example of a method - replace this comment with your own
+     *
+     * @return the sum of x and y
+     */
     public static boolean addPromo(Promo promo) throws PromoCodeAlreadyExistException
     {
 
@@ -68,6 +88,11 @@ public class DatabasePromo {
 
     }
 
+    /**
+     * An example of a method - replace this comment with your own
+     *
+     * @return the sum of x and y
+     */
     public static boolean activatePromo(int id)
     {
         for (Promo promo : PROMO_DATABASE)
@@ -81,6 +106,11 @@ public class DatabasePromo {
         return false;
     }
 
+    /**
+     * An example of a method - replace this comment with your own
+     *
+     * @return the sum of x and y
+     */
     public static boolean deactivatePromo(int id)
     {
         for (Promo promo : PROMO_DATABASE)
@@ -95,6 +125,11 @@ public class DatabasePromo {
         return false;
     }
 
+    /**
+     * An example of a method - replace this comment with your own
+     *
+     * @return the sum of x and y
+     */
     public static boolean removePromo(int id) throws PromoNotFoundException
         {
 

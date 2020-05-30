@@ -59,20 +59,19 @@ public class InvoiceController
     }
 
     @RequestMapping(value = "/invoiceStatus/{id}", method = RequestMethod.PUT)
-    public Invoice changeInvoiceStatus(@RequestParam(value = "id")int id,
+    public Invoice changeInvoiceStatus(@PathVariable int id,
                                        @RequestParam(value = "status")InvoiceStatus status) throws InvoiceNotFoundException
     {
         Invoice invoice = null;
         DatabaseInvoice.changeInvoiceStatus(id, status);
         try
         {
-            DatabaseInvoice.changeInvoiceStatus(id, status);
+           invoice = DatabaseInvoice.getInvoiceById(id);
         }
 
-        catch (Exception e)
+        catch (InvoiceNotFoundException e)
         {
             System.out.println(e.getMessage());
-            return null;
         }
         return invoice;
     }
@@ -130,7 +129,7 @@ public class InvoiceController
     @RequestMapping(value = "/createCashlessInvoice", method = RequestMethod.POST)
     public Invoice addCashlessInvoice(@RequestParam(value = "foods") ArrayList<Integer> foods,
                                       @RequestParam(value = "customer") int customerId,
-                                      @RequestParam(value = "promoCode", defaultValue = " ") String promoCode) throws CustomerNotFoundException
+                                      @RequestParam(value = "promoCode", defaultValue = "") String promoCode) throws CustomerNotFoundException
     {
         ArrayList<Food> dummyFoods = new ArrayList<>();
         for (int i : foods)

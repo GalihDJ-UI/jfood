@@ -24,11 +24,21 @@ public class DatabaseFood
         return FOOD_DATABASE;
     }
 
+    /**
+     * An example of a method - replace this comment with your own
+     *
+     * @return the sum of x and y
+     */
     public static int getLastId()
     {
         return lastId;
     }
 
+    /**
+     * An example of a method - replace this comment with your own
+     *
+     * @return the sum of x and y
+     */
     public static Food getFoodById(int id) throws FoodNotFoundException
     {
         for (Food foods : FOOD_DATABASE)
@@ -41,6 +51,11 @@ public class DatabaseFood
         throw new FoodNotFoundException(id);
     }
 
+    /**
+     * An example of a method - replace this comment with your own
+     *
+     * @return the sum of x and y
+     */
     public static ArrayList<Food> getFoodBySeller(int sellerId)
     {
         ArrayList<Food> dummyFoodList = new ArrayList<>();
@@ -62,6 +77,11 @@ public class DatabaseFood
     }
 
 
+    /**
+     * An example of a method - replace this comment with your own
+     *
+     * @return the sum of x and y
+     */
     public static ArrayList<Food> getFoodByCategory(FoodCategory category)
     {
         ArrayList<Food> dummyFoodList = new ArrayList<>();
@@ -76,6 +96,11 @@ public class DatabaseFood
         return dummyFoodList;
     }
 
+    /**
+     * An example of a method - replace this comment with your own
+     *
+     * @return the sum of x and y
+     */
     public static boolean addFood(Food foods)
     {
       // put your code here
@@ -84,7 +109,11 @@ public class DatabaseFood
         return true;
     }
 
-
+    /**
+     * An example of a method - replace this comment with your own
+     *
+     * @return the sum of x and y
+     */
     public static boolean removeFood(int id) throws FoodNotFoundException
     {
         for (Food foods : FOOD_DATABASE)

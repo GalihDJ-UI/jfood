@@ -28,61 +28,105 @@ public class Promo
     }
 
     /**
-     * An example of a method - replace this comment with your own
+     * Method getter untuk mengambil nilai variable id
      *
-
-     * @return    the sum of x and y
+     * @return isi variable id
      */
     public int getId()
     {
         // put your code here
         return id;
     }
-    
+
+    /**
+     * Method getter untuk mengambil nilai variable code
+     *
+     * @return isi variable code
+     */
     public String getCode()
     {
         // put your code here
         return code;
     }
-    
+
+    /**
+     * Method getter untuk mengambil nilai variable discount
+     *
+     * @return isi variable discount
+     */
     public int getDiscount()
     {
         // put your code here
         return discount;
     }
-    
+
+    /**
+     * Method getter untuk mengambil nilai variable minPrice
+     *
+     * @return isi variable minPrice
+     */
     public int getMinPrice()
     {
         // put your code here
         return minPrice;
     }
-    
+
+    /**
+     * Method getter untuk mengambil nilai variable active
+     *
+     * @return isi variable active
+     */
     public boolean getActive()
     {
         // put your code here
         return active;
     }
-    
+
+    /**
+     * Mengatur value dari variable seller
+     *
+     * @return Value pada parameter dimasukkan ke variable seller
+     */
     public void setId(int id)
     {
       this.id = id;  
     }
-    
+
+    /**
+     * Mengatur value dari variable seller
+     *
+     * @return Value pada parameter dimasukkan ke variable seller
+     */
     public void setCode(String code)
     {
       this.code = code;  
     }
-    
+
+    /**
+     * Mengatur value dari variable seller
+     *
+     * @return Value pada parameter dimasukkan ke variable seller
+     */
     public void setDiscount(int discount)
     {
       this.discount = discount;  
     }
-    
+
+    /**
+     * Mengatur value dari variable seller
+     *
+     * @return Value pada parameter dimasukkan ke variable seller
+     */
     public void setMinPrice(int minPrice)
     {
       this.minPrice = minPrice;  
     }
-    
+
+    /**
+     * Mengatur value dari variable seller
+     *
+     * @return Value pada parameter dimasukkan ke variable seller
+     */
     public void setActive(boolean active)
     {
       this.active = active;  
@@ -91,6 +135,11 @@ public class Promo
     //public void printData()
     //{
     //}
+    /**
+     * Mengatur value dari variable seller
+     *
+     * @return Value pada parameter dimasukkan ke variable seller
+     */
     public String toString()
     {
      return "Id = "+getId()+"\nCode = "+getCode()+"\nDiscount = "+getDiscount()+"\nMin Price = "+getMinPrice()+"\nActive Status= "+getActive();

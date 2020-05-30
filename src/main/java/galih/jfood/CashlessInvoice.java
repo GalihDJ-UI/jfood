@@ -8,13 +8,15 @@ import java.text.*;
  * @author (your name)
  * @version (a version number or a date)
  */
-public class CashlessInvoice extends Invoice {
+public class CashlessInvoice extends Invoice
+{
     // instance variables - replace the example below with your own
     private static final PaymentType PAYMENT_TYPE = PaymentType.Cashless;
     private Promo promo;
 
     /**
      * Constructor for objects of class ClasslessInvoice
+     * @return the sum of x and y
      */
     public CashlessInvoice(int id, ArrayList<Food> foods, Customer customer) {
         // initialise instance variables;
@@ -30,7 +32,6 @@ public class CashlessInvoice extends Invoice {
     /**
      * An example of a method - replace this comment with your own
      *
-
      * @return the sum of x and y
      */
     public PaymentType getPaymentType() {
@@ -38,16 +39,31 @@ public class CashlessInvoice extends Invoice {
         return PAYMENT_TYPE;
     }
 
+    /**
+     * An example of a method - replace this comment with your own
+     *
+     * @return the sum of x and y
+     */
     public Promo getPromo() {
         // put your code here
         return promo;
     }
 
+    /**
+     * An example of a method - replace this comment with your own
+     *
+     * @return the sum of x and y
+     */
     public void setPromo(Promo promo) {
         // put your code here
         this.promo = promo;
     }
 
+    /**
+     * An example of a method - replace this comment with your own
+     *
+     * @return the sum of x and y
+     */
     public void setTotalPrice()
     {
         super.totalPrice = 0;
@@ -55,9 +71,13 @@ public class CashlessInvoice extends Invoice {
         {
             super.totalPrice = super.totalPrice + foodList.getPrice();
         }
-        if (promo != null && promo.getActive() == true && super.totalPrice > promo.getMinPrice());
+        if (promo != null && promo.getActive() == true && super.totalPrice >= promo.getMinPrice())
         {
             totalPrice = totalPrice - promo.getDiscount();
+        }
+        else
+        {
+            super.totalPrice = super.totalPrice + 0;
         }
     }
 
@@ -78,6 +98,11 @@ public class CashlessInvoice extends Invoice {
     //   }
 
     //}
+    /**
+     * An example of a method - replace this comment with your own
+     *
+     * @return the sum of x and y
+     */
     public String toString()
     {
         String timeNow = "";

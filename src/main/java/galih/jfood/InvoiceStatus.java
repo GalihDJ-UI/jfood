@@ -9,14 +9,24 @@ public enum InvoiceStatus
 {
     Ongoing("Ongoing"), Finished("Finished"), Canceled("Canceled");
     private String status;
-    
+
+    /**
+     * Mengatur value dari variable seller
+     *
+     * @return Value pada parameter dimasukkan ke variable seller
+     */
     InvoiceStatus (String status)
     {
      this.status = status;
     }
-    
+
+    /**
+     * Mengatur value dari variable seller
+     *
+     * @return isi variable status
+     */
     public String toString()
     {
-    return status;
+        return status;
     }
 }
