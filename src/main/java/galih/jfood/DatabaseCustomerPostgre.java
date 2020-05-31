@@ -2,22 +2,36 @@ package galih.jfood;
 
 //import galih.jfood.EmailAlreadyExistException;
 import java.sql.*;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
+import java.util.Date;
 
 public class DatabaseCustomerPostgre
 {
     private static Connection c = null;
     private static Statement stmt = null;
 
-    public static boolean insertCustomer (Customer customer)
+    public static Customer insertCustomer (Customer customer)
     {
         c = DatabaseConnection.connection();
         try
         {
             stmt = c.createStatement();
-            String query = "INSERT INTO database_customer VALUES (\"+customer.getId()+\",'\"+customer.getName()+\"','\"+customer.getEmail()+\"','\"+customer.getPassword()+\"');\";";
+            int id = customer.getId();
+            String name = customer.getName();
+            String email = customer.getEmail();
+            String password = customer.getPassword();
+            Calendar cal = Calendar.getInstance();
+            cal.add(Calendar.DATE, 1);
+
+            Date date = cal.getTime();
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+            String date1 = sdf.format(date);
+
+            String query =  "INSERT INTO database_customer (id, name, email, password, join_date)"
+                    + "VALUES (" + id + ",'" + name + "','"+ email + "','"+ password + "','" + date1 + "');";
             stmt.executeUpdate(query);
             stmt.close();
             c.close();
@@ -28,8 +42,9 @@ public class DatabaseCustomerPostgre
             e.printStackTrace();
             System.err.println(e.getClass().getName()+": "+e.getMessage());
             System.exit(0);
+            return null;
         }
-        return true;
+        return customer;
     }
 
     public static int getLastCustomerId()
@@ -39,17 +54,17 @@ public class DatabaseCustomerPostgre
         try
         {
             stmt = c.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT MAX id AS custId FROM database_customer");
+            ResultSet rs = stmt.executeQuery("SELECT MAX (id) FROM database_customer;");
             while (rs.next())
             {
-                value = rs.getInt("custId");
+                value = rs.getInt("max");
             }
             rs.close();
             stmt.close();
             c.close();
         }
 
-        catch (Exception e)
+        catch (SQLException e)
         {
             e.printStackTrace();
             System.err.println(e.getClass().getName()+": "+e.getMessage());
@@ -81,7 +96,7 @@ public class DatabaseCustomerPostgre
             c.close();
         }
 
-        catch (Exception e)
+        catch (SQLException e)
         {
             e.printStackTrace();
             System.err.println(e.getClass().getName()+": "+e.getMessage());
@@ -119,7 +134,7 @@ public class DatabaseCustomerPostgre
         try
         {
             stmt = c.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT * FROM database_customer WHERE email = "+ emailInput +" AND password = "+ passwordInput + ";");
+            ResultSet rs = stmt.executeQuery("SELECT * FROM database_customer WHERE email = '"+ emailInput +"' AND password = '"+ passwordInput + "';");
             while (rs.next())
             {
                 int id = rs.getInt("id");
@@ -136,11 +151,12 @@ public class DatabaseCustomerPostgre
             c.close();
         }
 
-        catch (Exception e)
+        catch (SQLException e)
         {
             e.printStackTrace();
             System.err.println(e.getClass().getName()+": "+e.getMessage());
             System.exit(0);
+            return null;
         }
         return value;
     }
@@ -171,7 +187,7 @@ public class DatabaseCustomerPostgre
             c.close();
         }
 
-        catch (Exception e)
+        catch (SQLException e)
         {
             e.printStackTrace();
             System.err.println(e.getClass().getName()+": "+e.getMessage());

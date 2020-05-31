@@ -21,11 +21,11 @@ public class CustomerController
         Customer customer = null;
         try
         {
-            customer = DatabaseCustomer.getCustomerById(id);
+            customer = DatabaseCustomerPostgre.getCustomerById(id);
         }
-        catch (CustomerNotFoundException e)
+        catch (Exception e)
         {
-            System.out.println(e.getMessage());
+            System.err.println(e.getClass().getName()+": "+e.getMessage());
             return null;
         }
         return customer;
@@ -37,14 +37,14 @@ public class CustomerController
                                      @RequestParam(value="email") String email,
                                      @RequestParam(value="password") String password)
     {
-        Customer customer = new Customer(DatabaseCustomer.getLastId()+1, name, email, password);
+        Customer customer = new Customer(DatabaseCustomerPostgre.getLastCustomerId()+1, name, email, password);
         try
         {
-            DatabaseCustomer.addCustomer(customer);
+            DatabaseCustomerPostgre.insertCustomer(customer);
         }
-        catch (EmailAlreadyExistException e)
+        catch (Exception e)
         {
-            System.out.println(e.getMessage());
+            System.err.println(e.getClass().getName()+": "+e.getMessage());
             return null;
         }
         return customer;
@@ -57,11 +57,12 @@ public class CustomerController
         Customer customer;
         try
         {
-            customer = DatabaseCustomer.getCustomerLogin(email, password);
+            customer = DatabaseCustomerPostgre.getCustomerLogin(email, password);
         }
+
         catch (Exception e)
         {
-            System.out.println(e.getMessage());
+            System.err.println(e.getClass().getName()+": "+e.getMessage());
             return null;
         }
         return customer;
