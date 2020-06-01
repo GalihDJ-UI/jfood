@@ -1,6 +1,6 @@
 package galih.jfood;
 /**
- * Enumeration class FoodCategory - write a description of the enum class here
+ * Class enum berisi kategori-kategori makanan yang ada
  *
  * @author Galih Damar Jati
  * @version 5-Maret-2019
@@ -11,9 +11,9 @@ public enum FoodCategory
   private String category;
 
   /**
-   * Mengatur value dari variable seller
+   * Mengatur value dari variable category dengan salah satu kategori yang dibuat pada enum di atas
+   * @param category
    *
-   * @return Value pada parameter dimasukkan ke variable seller
    */
   FoodCategory (String category)
   {
@@ -21,9 +21,9 @@ public enum FoodCategory
   }
 
   /**
-   * Mengatur value dari variable seller
+   * Method untuk print data kategori makanan
    *
-   * @return Value pada parameter dimasukkan ke variable seller
+   * @return isi variable category
    */
   public String toString()
   {

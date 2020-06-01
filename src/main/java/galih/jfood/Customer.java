@@ -4,14 +4,14 @@ import java.util.regex.*;
 import java.text.*;
 
 /**
- * Menyimpan data pelanggan.
+ * Class yang menyimpan dan mengatur data pelanggan
  *
  * @author Galih Damar Jati
  * @version (27 Feb 2020)
  */
+
 public class Customer
 {
-    // instance variables - replace the example below with your own
     private int id;
     private String name;
     private String password;
@@ -19,7 +19,7 @@ public class Customer
     private String email;
 
     /**
-     * Constructor for objects of class Customer
+     * Constructor untuk object class customer
      *@param id
      *@param name
      *@param email
@@ -29,7 +29,6 @@ public class Customer
     public Customer(int id, String name, String email, String password, 
     Calendar joinDate)
     {
-        // initialise instance variables
         setEmail(email);
         setPassword(password);
         this.id = id;
@@ -38,14 +37,19 @@ public class Customer
     }
 
     /**
-     * An example of a method - replace this comment with your own
+     * Constructor untuk object class customer dengan joinDate bertipe data gregorian calendar
      *
-     * @return the sum of x and y
+     * @param id
+     * @param name
+     * @param email
+     * @param password
+     * @param year
+     * @param dayOfMonth
+     * @param month
      */
     public Customer(int id, String name, String email, String password, 
     int year, int month, int dayOfMonth)
     {
-        // initialise instance variables
         this.id = id;
         this.name = name;
         setEmail(email);
@@ -54,13 +58,15 @@ public class Customer
     }
 
     /**
-     * An example of a method - replace this comment with your own
+     * Constructor untuk object class customer tanpa joinDate
      *
-     * @return the sum of x and y
+     * @param id
+     * @param name
+     * @param email
+     * @param password
      */
     public Customer(int id, String name, String email, String password)
     {
-        // initialise instance variables
         this.id = id;
         this.name = name;
         setEmail(email);
@@ -69,18 +75,17 @@ public class Customer
     }
     
     /**
-     * Digunakan untuk mendapatkan id pelanggan
+     * Method getter untuk mendapatkan id pelanggan
      *
      * @return Isi variable id
      */
     public int getId()
     {
-        // put your code here
         return id;
     }
     
     /**
-     * Digunakan untuk mendapatkan nama pelanggan
+     * Method getter untuk mendapatkan nama pelanggan
      *
      * @return Isi variable name
      */
@@ -90,7 +95,7 @@ public class Customer
     }
     
     /**
-     * Digunakan untuk mendapatkan email pelanggan
+     * Method getter untuk mendapatkan email pelanggan
      *
      * @return Isi variable email
      */
@@ -100,7 +105,7 @@ public class Customer
     }
     
     /**
-     * Digunakan untuk mendapatkan password pelanggan
+     * Method getter untuk mendapatkan password pelanggan
      *
      * @return Isi variable password
      */
@@ -110,7 +115,7 @@ public class Customer
     }
     
     /**
-     * Digunakan untuk mendapatkan tanggal registrasi pelanggan
+     * Method getter untuk mendapatkan tanggal registrasi pelanggan
      *
      * @return Isi variable joinDate
      */
@@ -120,10 +125,9 @@ public class Customer
     }
     
     /**
-     * Mengatur value dari variable id
+     * Method setter untuk mengatur id pelanggan
      *
-     * @param  id dengan tipe data integer
-     * @return Value pada parameter dimasukkan ke variable id
+     * @param id
      */
     public void setId(int id)
     {
@@ -131,10 +135,9 @@ public class Customer
     }
     
     /**
-     * Mengatur value dari variable name
+     * Method setter untuk mengatur nama pelanggan
      *
-     * @param  name dengan tipe data string
-     * @return Value pada parameter dimasukkan ke variable name
+     * @param name
      */
     public void setName(String name)
     {
@@ -142,10 +145,9 @@ public class Customer
     }
     
     /**
-     * Mengatur value dari variable email
+     * Method setter untuk mengatur email pelanggan
      *
-     * @param  email dengan tipe data string
-     * @return Value pada parameter dimasukkan ke variable email
+     * @param  email
      */
     public void setEmail(String email)
     {
@@ -164,10 +166,9 @@ public class Customer
     }
     
     /**
-     * Mengatur value dari variable password
+     * Method setter untuk mengatur password pelanggan
      *
-     * @param  password dengan tipe data string
-     * @return Value pada parameter dimasukkan ke variable password
+     * @param  password
      */
     public void setPassword(String password)
     {
@@ -185,9 +186,9 @@ public class Customer
     }
     
     /**
-     * Mengatur value dari variable joinDate
+     * Method setter untuk mengatur join date pelanggan
      *
-     * @param  joinDate dengan tipe data string
+     * @param  joinDate
      */
     public void setJoinDate(Calendar joinDate)
     {
@@ -195,9 +196,11 @@ public class Customer
     }
 
     /**
-     * Mengatur value dari variable joinDate
+     * Method setter untuk mengatur join date pelanggan
      *
-     * @param  joinDate dengan tipe data string
+     * @param year
+     * @param month
+     * @param dayOfMonth
      */
     public void setJoinDate(int year, int month, int dayOfMonth)
     {
@@ -205,10 +208,9 @@ public class Customer
     }
     
     /**
-     * Untuk print data variable pada class ini
+     * Method untuk print data pelanggan
+     * @return data pelanggan berisi id, nama, email, password, dan join date
      *
-     * @param  Variable dengan input dari salah satu method setter di atas
-     * @return Isi dari variable yang ada. Tergantung pada variable apa yang dipanggil
      */
     public String toString()
     {

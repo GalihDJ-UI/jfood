@@ -1,21 +1,20 @@
 package galih.jfood;
 /**
- * Menyimpan data penjual makanan.
+ * Class yang menyimpan dan mengatur data pelanggan
  *
  * @author Galih Damar Jati
  * @version (27 Feb 2020)
  */
 public class Seller
 {
-    // instance variables - replace the example below with your own
     private int id;
     private String name;
     private String email;
     private String phoneNumber;
     private Location location;
-    
+
     /**
-     * Constructor for objects of class Customer
+     * Constructor untuk object class seller
      *@param id
      *@param name
      *@param email
@@ -33,18 +32,17 @@ public class Seller
     }
 
     /**
-     * Digunakan untuk mendapatkan id penjual
+     * Method getter untuk mendapatkan id penjual
      *
      * @return Isi variable id
      */
     public int getId()
     {
-        // put your code here
         return id;
     }
     
     /**
-     * Digunakan untuk mendapatkan nama penjual
+     * Method getter untuk mendapatkan nama penjual
      *
      * @return Isi variable name
      */
@@ -54,7 +52,7 @@ public class Seller
     }
     
     /**
-     * Digunakan untuk mendapatkan email penjual
+     * Method getter untuk mendapatkan email penjual
      *
      * @return Isi variable email
      */
@@ -64,7 +62,7 @@ public class Seller
     }
     
     /**
-     * Digunakan untuk mendapatkan nomor telepon penjual
+     * Method getter untuk mendapatkan nomor telepon penjual
      *
      * @return Isi variable phoneNumber
      */
@@ -74,7 +72,7 @@ public class Seller
     }
     
     /**
-     * Digunakan untuk mendapatkan lokasi
+     * Method getter untuk mendapatkan lokasi penjual
      *
      * @return Isi variable location
      */
@@ -84,10 +82,9 @@ public class Seller
     }
     
     /**
-     * Mengatur value dari variable id
+     * Method setter untuk mengatur id penjual
+     * @param id
      *
-
-     * @return Value pada parameter dimasukkan ke variable id
      */
     public void setId(int id)
     {
@@ -95,10 +92,9 @@ public class Seller
     }
     
     /**
-     * Mengatur value dari variable name
+     * Method setter untuk mengatur nama penjual
+     * @param name
      *
-
-     * @return Value pada parameter dimasukkan ke variable name
      */
     public void setName(String name)
     {
@@ -106,10 +102,9 @@ public class Seller
     }
     
     /**
-     * Mengatur value dari variable email
+     * Method setter untuk mengatur email penjual
+     * @param email
      *
-
-     * @return Value pada parameter dimasukkan ke variable email
      */
     public void setEmail(String email)
     {
@@ -117,10 +112,9 @@ public class Seller
     }
     
     /**
-     * Mengatur value dari variable phoneNumber
+     * Method setter untuk mengatur nomor telepon penjual
+     * @param phoneNumber
      *
-
-     * @return Value pada parameter dimasukkan ke variable phoneNumber
      */
     public void setPhoneNumber(String phoneNumber)
     {
@@ -128,10 +122,9 @@ public class Seller
     }
     
     /**
-     * Mengatur value dari variable phoneNumber
+     * Method setter untuk mengatur lokasi penjual
+     * @param location
      *
-
-     * @return Value pada parameter dimasukkan ke variable phoneNumber
      */
     public void setLocation(Location location)
     {
@@ -139,15 +132,10 @@ public class Seller
     }
     
     /**
-     * Untuk print data variable pada class ini
+     * Untuk print data penjual
      *
-
-     * @return Isi dari variable yang ada. Tergantung pada variable apa yang dipanggil
+     * @return data penjual berisi id, nama, nomor telepon, dan lokasi
      */
-    //public void printData()
-    //{
-     //System.out.println(name);   
-    //}
     public String toString()
     {
      return "Id = "+getId()+"\nNama = "+getName()+"\nPhone Number = "+getPhoneNumber()+"\nLocation = "+getLocation().getProvince();

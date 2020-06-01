@@ -1,15 +1,23 @@
 package galih.jfood;
 import java.util.ArrayList;
 
+
+/**
+ * Class database yang menyimpan dan mengatur data invoice-invoice yang ada
+ *
+ * @author Galih Damar Jati
+ * @version 29-Mei-2019
+ */
+
 public class DatabaseInvoice
 {
     private static ArrayList<Invoice> INVOICE_DATABASE = new ArrayList<Invoice>();
     private static int lastId = 0;
 
     /**
-     * An example of a method - replace this comment with your own
+     * Method untuk mendapatkan daftar invoice
      *
-     * @return the sum of x and y
+     * @return isi variable INVOICE_DATABASE
      */
     public static ArrayList<Invoice> getInvoiceDatabase()
     {
@@ -18,9 +26,9 @@ public class DatabaseInvoice
     }
 
     /**
-     * An example of a method - replace this comment with your own
+     * Method getter untuk mendapatkan id terakhir
      *
-     * @return the sum of x and y
+     * @return isi variabel lastId
      */
     public static int getLastId()
     {
@@ -28,9 +36,8 @@ public class DatabaseInvoice
     }
 
     /**
-     * An example of a method - replace this comment with your own
+     * Method untuk mendapatkan invoice berdasarkan id
      *
-     * @return the sum of x and y
      */
     public static Invoice getInvoiceById(int id) throws InvoiceNotFoundException
     {
@@ -45,9 +52,9 @@ public class DatabaseInvoice
     }
 
     /**
-     * An example of a method - replace this comment with your own
+     * Method untuk mendapatkan invoice berdasarkan pelanggan
      *
-     * @return the sum of x and y
+     * @return dummyInv yang berisi invoice
      */
     public static ArrayList<Invoice> getInvoiceByCustomer(int customerId)
     {
@@ -64,9 +71,8 @@ public class DatabaseInvoice
     }
 
     /**
-     * An example of a method - replace this comment with your own
+     * Method untuk menambahkan invoice
      *
-     * @return the sum of x and y
      */
     public static boolean addInvoice(Invoice invoice) throws OngoingInvoiceAlreadyExistsException
     {
@@ -84,9 +90,8 @@ public class DatabaseInvoice
     }
 
     /**
-     * An example of a method - replace this comment with your own
+     * Method untuk mengganti status invoice yang ongoing
      *
-     * @return the sum of x and y
      */
     public static boolean changeInvoiceStatus (int id, InvoiceStatus invoiceStatus)
     {
@@ -103,9 +108,8 @@ public class DatabaseInvoice
 
 
     /**
-     * An example of a method - replace this comment with your own
+     * Method untuk menghapus invoice
      *
-     * @return the sum of x and y
      */
     public static boolean removeInvoice(int id) throws InvoiceNotFoundException
     {

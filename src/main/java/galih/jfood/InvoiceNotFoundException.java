@@ -1,12 +1,19 @@
 package galih.jfood;
+
+/**
+ * Class exception untuk error handling ketika invoice tidak ditemukan
+ *
+ * @author Galih Damar Jati
+ * @version 29 Mei 2020
+ */
 public class InvoiceNotFoundException extends Exception
 {
     private int invoice_error;
 
     /**
-     * Mengatur value dari variable seller
+     * Method untuk mendapatkan input yang dibutuhkan untuk parameter error handling
+     * @param invoice_input
      *
-     * @return Value pada parameter dimasukkan ke variable seller
      */
     public InvoiceNotFoundException (int invoice_input)
     {
@@ -15,9 +22,9 @@ public class InvoiceNotFoundException extends Exception
     }
 
     /**
-     * Mengatur value dari variable seller
+     * Method untuk mendapatkan error message
      *
-     * @return Value pada parameter dimasukkan ke variable seller
+     * @return error message
      */
     public String getMessage()
     {

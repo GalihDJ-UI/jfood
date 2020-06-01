@@ -8,9 +8,20 @@ import java.util.ArrayList;
 @RequestMapping("/invoice")
 @RestController
 
+/**
+ * Class controller untuk mengatur manipulasi data invoice
+ *
+ * @author Galih Damar Jati
+ * @version 29 Mei 2020
+ */
+
 public class InvoiceController
 {
     @RequestMapping(value = "", method = RequestMethod.GET)
+    /**
+     * Method untuk mendapatkan semua invoice
+     *
+     */
     public ArrayList<Invoice> getAllInvoice()
     {
         ArrayList<Invoice> invoiceList;
@@ -27,6 +38,10 @@ public class InvoiceController
     }
 
     @RequestMapping("/{id}")
+    /**
+     * Method untuk mendapatkan invoice berdasarkan id
+     *
+     */
     public Invoice getInvoiceById(@PathVariable int id)
     {
         Invoice invoice = null;
@@ -43,6 +58,10 @@ public class InvoiceController
     }
 
     @RequestMapping(value = "/customer/{cusId}", method = RequestMethod.GET)
+    /**
+     * Method untuk mendapatkan invoice berdasarkan pelanggan
+     *
+     */
     public ArrayList<Invoice> getInvoiceByCustomer(@PathVariable int cusId)
     {
         ArrayList<Invoice> invoice = null;
@@ -59,6 +78,10 @@ public class InvoiceController
     }
 
     @RequestMapping(value = "/invoiceStatus/{id}", method = RequestMethod.PUT)
+    /**
+     * Method untuk mengganti status invoice
+     *
+     */
     public Invoice changeInvoiceStatus(@PathVariable int id,
                                        @RequestParam(value = "status")InvoiceStatus status) throws InvoiceNotFoundException
     {
@@ -77,6 +100,10 @@ public class InvoiceController
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+    /**
+     * Method untuk menghapus invoice
+     *
+     */
     public Boolean removeInvoice(@RequestParam(value = "id") int id) throws InvoiceNotFoundException
     {
         try
@@ -92,6 +119,10 @@ public class InvoiceController
     }
 
     @RequestMapping(value = "/createCashInvoice", method = RequestMethod.POST)
+    /**
+     * Method untuk menambah cash invoice
+     *
+     */
     public Invoice addCashInvoice(@RequestParam(value = "foods") ArrayList<Integer> foods,
                                   @RequestParam(value = "customer") int customerId,
                                   @RequestParam(value = "deliveryFee", defaultValue = "0") int deliveryFee) throws CustomerNotFoundException
@@ -111,7 +142,7 @@ public class InvoiceController
 
         Invoice invoice = new CashInvoice(DatabaseInvoice.getLastId() + 1,
                 dummyFoods,
-                DatabaseCustomer.getCustomerById(customerId),
+                DatabaseCustomerPostgre.getCustomerById(customerId),
                 deliveryFee);
         try
         {
@@ -127,6 +158,10 @@ public class InvoiceController
     }
 
     @RequestMapping(value = "/createCashlessInvoice", method = RequestMethod.POST)
+    /**
+     * Method untuk menambah cashless invoice
+     *
+     */
     public Invoice addCashlessInvoice(@RequestParam(value = "foods") ArrayList<Integer> foods,
                                       @RequestParam(value = "customer") int customerId,
                                       @RequestParam(value = "promoCode", defaultValue = "") String promoCode) throws CustomerNotFoundException
@@ -144,7 +179,7 @@ public class InvoiceController
             }
         }
 
-        Invoice invoice = new CashlessInvoice(DatabaseInvoice.getLastId() + 1, dummyFoods, DatabaseCustomer.getCustomerById(customerId), DatabasePromo.getPromoByCode(promoCode));
+        Invoice invoice = new CashlessInvoice(DatabaseInvoice.getLastId() + 1, dummyFoods, DatabaseCustomerPostgre.getCustomerById(customerId), DatabasePromo.getPromoByCode(promoCode));
         try
         {
             DatabaseInvoice.addInvoice(invoice);
@@ -156,8 +191,4 @@ public class InvoiceController
         invoice.setTotalPrice();
         return invoice;
     }
-
-
-
-
 }

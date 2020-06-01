@@ -8,11 +8,24 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.Date;
 
+
+/**
+ * Class database yang menyimpan dan mengatur data pelanggan-pelanggan yang ada
+ *
+ * @author Galih Damar Jati
+ * @version 29 Mei 2020
+ */
+
 public class DatabaseCustomerPostgre
 {
     private static Connection c = null;
     private static Statement stmt = null;
 
+    /**
+     * Method untuk menambahkan data customer
+     * @param customer
+     *
+     */
     public static Customer insertCustomer (Customer customer)
     {
         c = DatabaseConnection.connection();
@@ -47,6 +60,11 @@ public class DatabaseCustomerPostgre
         return customer;
     }
 
+
+    /**
+     * Method getter untuk mendapatkan id pelanggan terakhir
+     *
+     */
     public static int getLastCustomerId()
     {
         int value = 0;
@@ -73,6 +91,11 @@ public class DatabaseCustomerPostgre
         return value;
     }
 
+    /**
+     * Method untuk mendapatkan customer berdasarkan idnya
+     * @param id
+     *
+     */
     public static Customer getCustomerById(int id)
     {
         Customer value = null;
@@ -80,7 +103,7 @@ public class DatabaseCustomerPostgre
         try
         {
             stmt = c.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT * FROM database_customer WHERE id = \"+id+\";\"");
+            ResultSet rs = stmt.executeQuery("SELECT * FROM database_customer WHERE id = "+ id +"");
             while (rs.next())
             {
                 id = rs.getInt("id");
@@ -105,6 +128,11 @@ public class DatabaseCustomerPostgre
         return value;
     }
 
+    /**
+     * Method untuk menghapus data customer berdasarkan id
+     * @param id
+     *
+     */
     public static boolean removeCustomer(int id)
     {
         c = DatabaseConnection.connection();
@@ -126,6 +154,12 @@ public class DatabaseCustomerPostgre
         return true;
     }
 
+    /**
+     * Method untuk mendapatkan data customer berdasarkan credentials login
+     * @param emailInput
+     * @param passwordInput
+     *
+     */
     public static Customer getCustomerLogin(String emailInput, String passwordInput)
     {
         Customer value = null;
@@ -161,6 +195,10 @@ public class DatabaseCustomerPostgre
         return value;
     }
 
+    /**
+     * Method untuk mendapatkan semua data customer pada database
+     *
+     */
     public static ArrayList<Customer> getCustomerDatabase()
     {
         ArrayList<Customer> customers = new ArrayList<>();

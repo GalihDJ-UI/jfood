@@ -3,28 +3,28 @@ import java.util.*;
 import java.util.regex.*; 
 import java.text.*;
 /**
- * Menyimpan bukti transaksi
+ * Class yang menyimpan dan mengatur data invoice
  *
  * @author Galih Damar Jati
  * @version (27 Feb 2020)
  */
 public abstract class Invoice
 {
-    // instance variables - replace the example below with your own
     private int id;
     private ArrayList<Food> foods = new ArrayList<Food>();
     private Calendar date;
     protected int totalPrice;
     private Customer customer;
     private InvoiceStatus invoiceStatus;
-    
-    /**
-     * Constructor for objects of class Invoice
 
+    /**
+     * Constructor untuk object pada class invoice
+     * @param id
+     * @param foods
+     * @param customer
      */
     public Invoice(int id, ArrayList<Food> foods, Customer customer)
     {
-        // initialise instance variables
         this.id = id;
         this.foods = foods;
         this.customer = customer;
@@ -33,73 +33,67 @@ public abstract class Invoice
     }
 
     /**
-     * Digunakan untuk mendapatkan id transaksi
+     * Method getter untuk mendapatkan id transaksi
      *
      * @return Isi variable id
      */
     public int getId()
     {
-        // put your code here
         return id;
     }
     
     /**
-     * Digunakan untuk mendapatkan id makanan
+     * Method getter untuk mendapatkan makanan
      *
-     * @return Isi variable idFood
+     * @return isi variable foods
      */
     public ArrayList<Food> getFoods()
     {
-        // put your code here
         return foods;
     }
     
     /**
-     * Digunakan untuk mendapatkan tanggal
+     * Method getter untuk mendapatkan tanggal
      *
      * @return Isi variable date
      */
     public Calendar getDate()
     {
-        // put your code here
         return date;
     }
     
     /**
-     * Digunakan untuk mendapatkan total harga transaksi
+     * Method getter untuk mendapatkan total harga transaksi
      *
      * @return Isi variable totalPrice
      */
     public int getTotalPrice()
     {
-        // put your code here
         return totalPrice;
     }
     
     /**
-     * Digunakan untuk mendapatkan nama pelanggan
+     * Method getter untuk mendapatkan nama pelanggan
      *
      * @return Isi variable customer
      */
     public Customer getCustomer()
     {
-        // put your code here
         return customer;
     }
     
     
     /**
-     * 
+     * Method abstract untuk mendapatkan tipe pembayaran
      *
-     * @return 
      */
     public abstract PaymentType getPaymentType();
     
     
     /**
-     * 
+     * Method getter untuk mendapatkan status invoice
      *
-     * @return 
+     * @return isi variable invoiceStatus
      */
     public InvoiceStatus getInvoiceStatus()
     {
@@ -108,10 +102,9 @@ public abstract class Invoice
     }
     
     /**
-     * Mengatur value dari variable id
+     * Method setter untuk mengatur id invoice
+     * @param id
      *
-     * @param  id dengan tipe data integer
-     * @return Value pada parameter dimasukkan ke variable id
      */
     public void setId(int id)
     {
@@ -120,65 +113,58 @@ public abstract class Invoice
     }
     
     /**
-     * Mengatur value dari variable idFood
+     * Method setter untuk mengatur makanan pada invoice
+     * @param foods
      *
-
-     * @return Value pada parameter dimasukkan ke variable idFood
      */
     public void setFoods(ArrayList<Food> foods)
     {
-        // put your code here
         this.foods = foods;
     }
-    
-    /**
-     * Mengatur value dari variable date
-     *
 
-     * @return Value pada parameter dimasukkan ke variable date
+    /**
+     * Method setter untuk mengatur tanggal invoice dengan tipe data calendar
+     * @param date
+     *
      */
     public void setDate(Calendar date)
     {
-        // put your code here
         this.date = date;
     }
-    
+
+    /**
+     * Method setter untuk mengatur tanggal invoice dengan tipe data gregorian calendar
+     * @param year
+     * @param month
+     * @param dayOfMonth
+     *
+     */
     public void setDate(int year, int month, int dayOfMonth)
     {
-        // put your code here
         this.date = new GregorianCalendar (year, month-1, dayOfMonth);
     }
     
     /**
-     * Mengatur value dari variable totalPrice
+     * Method abstract untuk mengatur harga total
      *
-
-     * @return Value pada parameter dimasukkan ke variable totalPrice
      */
     public abstract void setTotalPrice();
-    //{
-        // put your code here
-    //}
-    
-    /**
-     * Mengatur value dari variable customer
-     *
 
-     * @return Value pada parameter dimasukkan ke variable customer
+    /**
+     * Method setter untuk mengatur data pelanggan pada invoice
+     * @param customer
+     *
      */
     public void setCustomer(Customer customer)
     {
-        // put your code here
         this.customer = customer;
     }
 
     /**
-     * 
+     * Method untuk mengatur status invoice menjadi ongoing
+     * @param status
      *
-     * @param  
-     * @return 
      */
-
     public void status(InvoiceStatus status)
     {
         this.invoiceStatus = InvoiceStatus.Ongoing;
@@ -186,22 +172,15 @@ public abstract class Invoice
     }
 
     /**
-     * Mengatur value dari variable seller
+     * Method setter untuk mengatur status invoice
+     * @param invoiceStatus
      *
-     * @return Value pada parameter dimasukkan ke variable seller
      */
     public void setInvoiceStatus(InvoiceStatus invoiceStatus)
     {
-        // put your code here
         this.invoiceStatus = invoiceStatus;
     }
-    
-    /**
-     * Untuk print data variable pada class ini
-     *
 
-     * @return Isi dari variable yang ada. Tergantung pada variable apa yang dipanggil
-     */
     //public abstract void printData();
     //{
       //System.out.println("=====INVOICE=====");  
@@ -214,7 +193,7 @@ public abstract class Invoice
     //}
 
     /**
-     * Mengatur value dari variable seller
+     * Method abstract untuk print data invoice
      *
      */
     public abstract String toString();

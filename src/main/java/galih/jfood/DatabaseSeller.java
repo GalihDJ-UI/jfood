@@ -2,7 +2,7 @@ package galih.jfood;
 import java.util.ArrayList;
 
 /**
- * Menyimpan database penjual
+ * Class database yang menyimpan dan mengatur data penjual-penjual yang ada
  *
  * @author Galih Damar Jati
  * @version (28 Feb 2020)
@@ -14,9 +14,9 @@ public class DatabaseSeller
     private static int lastId = 0;
 
     /**
-     * An example of a method - replace this comment with your own
+     * Method untuk mendapatkan daftar penjual
      *
-     * @return the sum of x and y
+     * @return isi variable SELLER_DATABASE
      */
     public static ArrayList<Seller> getSellerDatabase()
     {
@@ -25,9 +25,9 @@ public class DatabaseSeller
     }
 
     /**
-     * An example of a method - replace this comment with your own
+     * Method getter untuk mendapatkan id terakhir
      *
-     * @return the sum of x and y
+     * @return isi variabel lastId
      */
     public static int getLastId()
     {
@@ -35,9 +35,8 @@ public class DatabaseSeller
     }
 
     /**
-     * An example of a method - replace this comment with your own
+     * Method untuk mendapatkan penjual berdasarkan id
      *
-     * @return the sum of x and y
      */
     public static Seller getSellerById(int id) throws SellerNotFoundException
     {
@@ -53,9 +52,8 @@ public class DatabaseSeller
     }
 
     /**
-     * An example of a method - replace this comment with your own
+     * Method untuk menambahkan penjual
      *
-     * @return the sum of x and y
      */
     public static boolean addSeller(Seller seller)
     {
@@ -66,9 +64,8 @@ public class DatabaseSeller
     }
 
     /**
-     * An example of a method - replace this comment with your own
+     * Method untuk menghapus penjual
      *
-     * @return the sum of x and y
      */
     public static boolean removeSeller(int id) throws SellerNotFoundException
     {
@@ -83,10 +80,4 @@ public class DatabaseSeller
         }
         throw new SellerNotFoundException(id);
     }
-
-    
-    //public static String[] getListSeller()
-  //  {
-    //  return listSeller;
-  //  }
 }

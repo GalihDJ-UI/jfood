@@ -3,66 +3,76 @@ import java.util.*;
 import java.util.regex.*;
 import java.text.*;
 /**
- * Write a description of class ClasslessInvoice here.
+ * Class yang menyimpan dan mengatur data yang dibutuhkan untuk cashless invoice
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Galih Damar Jati
+ * @version 29 Mei 2020
  */
 public class CashlessInvoice extends Invoice
 {
-    // instance variables - replace the example below with your own
+
     private static final PaymentType PAYMENT_TYPE = PaymentType.Cashless;
     private Promo promo;
 
     /**
-     * Constructor for objects of class ClasslessInvoice
-     * @return the sum of x and y
+     * Constructor untuk object pada class CashlessInvoice
+     * @param id
+     * @param foods
+     * @param customer
      */
-    public CashlessInvoice(int id, ArrayList<Food> foods, Customer customer) {
-        // initialise instance variables;
+    public CashlessInvoice(int id, ArrayList<Food> foods, Customer customer)
+    {
+
         super(id, foods, customer);
     }
 
-    public CashlessInvoice(int id, ArrayList<Food> foods, Customer customer, Promo promo) {
-        // initialise instance variables;
+
+    /**
+     * Constructor untuk object pada class CashlessInvoice
+     * @param id
+     * @param foods
+     * @param customer
+     * @param promo
+     */
+    public CashlessInvoice(int id, ArrayList<Food> foods, Customer customer, Promo promo)
+    {
         super(id, foods, customer);
         this.promo = promo;
     }
 
     /**
-     * An example of a method - replace this comment with your own
+     * Method getter untuk mengambil tipe pembayaran
      *
-     * @return the sum of x and y
+     * @return isi variable PAYMENT_TYPE
      */
-    public PaymentType getPaymentType() {
+    public PaymentType getPaymentType()
+    {
         // put your code here
         return PAYMENT_TYPE;
     }
 
     /**
-     * An example of a method - replace this comment with your own
+     * Method getter untuk mendapatkan kode promo
      *
-     * @return the sum of x and y
+     * @return isi variable promo
      */
-    public Promo getPromo() {
-        // put your code here
+    public Promo getPromo()
+    {
         return promo;
     }
 
     /**
-     * An example of a method - replace this comment with your own
+     * Method setter untuk mengatur kode promo
      *
-     * @return the sum of x and y
      */
-    public void setPromo(Promo promo) {
-        // put your code here
+    public void setPromo(Promo promo)
+    {
         this.promo = promo;
     }
 
     /**
-     * An example of a method - replace this comment with your own
+     * Method setter untuk mengatur harga total
      *
-     * @return the sum of x and y
      */
     public void setTotalPrice()
     {
@@ -99,9 +109,9 @@ public class CashlessInvoice extends Invoice
 
     //}
     /**
-     * An example of a method - replace this comment with your own
+     * Method untuk print data cashless invoice
      *
-     * @return the sum of x and y
+     * @return invoice transaksi cashless
      */
     public String toString()
     {

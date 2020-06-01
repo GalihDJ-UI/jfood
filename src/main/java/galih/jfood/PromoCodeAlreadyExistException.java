@@ -5,9 +5,8 @@ public class PromoCodeAlreadyExistException extends Exception
 
     /**
      * Mengatur value dari variable joinDate
+     * @param promo_input
      *
-     * @param  joinDate dengan tipe data string
-     * @return Value pada parameter dimasukkan ke variable joinDate
      */
     public PromoCodeAlreadyExistException (Promo promo_input)
     {
@@ -18,8 +17,7 @@ public class PromoCodeAlreadyExistException extends Exception
     /**
      * Mengatur value dari variable joinDate
      *
-     * @param  joinDate dengan tipe data string
-     * @return Value pada parameter dimasukkan ke variable joinDate
+     * @return error message
      */
     public String getMessage()
     {

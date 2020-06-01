@@ -2,22 +2,21 @@ package galih.jfood;
 import java.util.ArrayList;
 
 /**
- * Menyimpan database makanan.
+ * Class database yang menyimpan dan mengatur data makanan-makanan yang ada
  *
  * @author Galih Damar Jati
  * @version (27 Feb 2020)
  */
 public class DatabaseFood
 {
-    // instance variables - replace the example below with your own
     private static ArrayList<Food> FOOD_DATABASE = new ArrayList<Food>(0);
     private static int lastId = 0;
-    /**
-     * Mengambil input boolean untuk menambahkan food
-     *
-     * @return false
-     */
 
+    /**
+     * Method untuk mendapatkan daftar food
+     *
+     * @return isi variable FOOD_DATABASE
+     */
     public static ArrayList<Food> getFoodDatabase()
     {
         // put your code here
@@ -25,9 +24,9 @@ public class DatabaseFood
     }
 
     /**
-     * An example of a method - replace this comment with your own
+     * Method getter untuk mendapatkan id terakhir
      *
-     * @return the sum of x and y
+     * @return isi variabel lastId
      */
     public static int getLastId()
     {
@@ -35,9 +34,8 @@ public class DatabaseFood
     }
 
     /**
-     * An example of a method - replace this comment with your own
+     * Method getter untuk mendapatkan nama makanan berdasarkan id makanan
      *
-     * @return the sum of x and y
      */
     public static Food getFoodById(int id) throws FoodNotFoundException
     {
@@ -52,9 +50,9 @@ public class DatabaseFood
     }
 
     /**
-     * An example of a method - replace this comment with your own
+     * Method getter untuk mendapatkan nama makanan berdasarkan id penjual
      *
-     * @return the sum of x and y
+     * @return variable dummyFoodList berisi daftar makanan
      */
     public static ArrayList<Food> getFoodBySeller(int sellerId)
     {
@@ -78,9 +76,9 @@ public class DatabaseFood
 
 
     /**
-     * An example of a method - replace this comment with your own
+     * Method getter untuk mendapatkan nama makanan berdasarkan kategori
      *
-     * @return the sum of x and y
+     * @return variable dummyFoodList berisi daftar makanan
      */
     public static ArrayList<Food> getFoodByCategory(FoodCategory category)
     {
@@ -97,22 +95,19 @@ public class DatabaseFood
     }
 
     /**
-     * An example of a method - replace this comment with your own
+     * Method untuk menambahkan makanan pada database
      *
-     * @return the sum of x and y
      */
     public static boolean addFood(Food foods)
     {
-      // put your code here
         FOOD_DATABASE.add(foods);
         lastId = foods.getId();
         return true;
     }
 
     /**
-     * An example of a method - replace this comment with your own
+     * Method untuk menghapus makanan berdasarkan idnya
      *
-     * @return the sum of x and y
      */
     public static boolean removeFood(int id) throws FoodNotFoundException
     {

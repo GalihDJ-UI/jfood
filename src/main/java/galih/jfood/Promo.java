@@ -1,25 +1,28 @@
 package galih.jfood;
 /**
- * Write a description of class Promo here.
+ * Class yang menyimpan dan mengatur data promo
  *
  * @author Galih Damar Jati
  * @version 12-03-2020
  */
 public class Promo
 {
-    // instance variables - replace the example below with your own
     private int id;
     private String code;
     private int discount;
     private int minPrice;
     private boolean active;
-    
+
     /**
-     * Constructor for objects of class Promo
+     * Constructor untuk object class promo
+     *@param id
+     *@param code
+     *@param discount
+     *@param minPrice
+     *@param active
      */
     public Promo(int id, String code, int discount, int minPrice, boolean active)
     {
-        // initialise instance variables
        this.id = id;
        this.code = code;
        this.discount = discount;
@@ -28,64 +31,59 @@ public class Promo
     }
 
     /**
-     * Method getter untuk mengambil nilai variable id
+     * Method getter untuk mendapatkan id pelanggan
      *
-     * @return isi variable id
+     * @return Isi variable id
      */
     public int getId()
     {
-        // put your code here
         return id;
     }
 
     /**
-     * Method getter untuk mengambil nilai variable code
+     * Method getter untuk mendapatkan kode promo
      *
-     * @return isi variable code
+     * @return Isi variable code
      */
     public String getCode()
     {
-        // put your code here
         return code;
     }
 
     /**
-     * Method getter untuk mengambil nilai variable discount
+     * Method getter untuk mendapatkan besar potongan harga promo
      *
      * @return isi variable discount
      */
     public int getDiscount()
     {
-        // put your code here
         return discount;
     }
 
     /**
-     * Method getter untuk mengambil nilai variable minPrice
+     * Method getter untuk mendapatkan harga minimum promo
      *
      * @return isi variable minPrice
      */
     public int getMinPrice()
     {
-        // put your code here
         return minPrice;
     }
 
     /**
-     * Method getter untuk mengambil nilai variable active
+     * Method getter untuk mendapatkan status promo
      *
      * @return isi variable active
      */
     public boolean getActive()
     {
-        // put your code here
         return active;
     }
 
     /**
-     * Mengatur value dari variable seller
+     * Method setter untuk mengatur id promo
+     * @param id
      *
-     * @return Value pada parameter dimasukkan ke variable seller
      */
     public void setId(int id)
     {
@@ -93,9 +91,9 @@ public class Promo
     }
 
     /**
-     * Mengatur value dari variable seller
+     * Method setter untuk mengatur kode promo
+     * @param code
      *
-     * @return Value pada parameter dimasukkan ke variable seller
      */
     public void setCode(String code)
     {
@@ -103,9 +101,9 @@ public class Promo
     }
 
     /**
-     * Mengatur value dari variable seller
+     * Method setter untuk mengatur besar potongan harga promo
+     * @param discount
      *
-     * @return Value pada parameter dimasukkan ke variable seller
      */
     public void setDiscount(int discount)
     {
@@ -113,9 +111,9 @@ public class Promo
     }
 
     /**
-     * Mengatur value dari variable seller
+     * Method setter untuk mengatur harga minimum promo
+     * @param minPrice
      *
-     * @return Value pada parameter dimasukkan ke variable seller
      */
     public void setMinPrice(int minPrice)
     {
@@ -123,22 +121,20 @@ public class Promo
     }
 
     /**
-     * Mengatur value dari variable seller
+     * Method setter untuk mengatur status promo
+     * @param active
      *
-     * @return Value pada parameter dimasukkan ke variable seller
      */
     public void setActive(boolean active)
     {
       this.active = active;  
     }
-    
-    //public void printData()
-    //{
-    //}
+
+
     /**
-     * Mengatur value dari variable seller
+     * Method untuk print data promo
      *
-     * @return Value pada parameter dimasukkan ke variable seller
+     * @return data promo berisi id, kode, potongan harga, harga minimum, dan status promo
      */
     public String toString()
     {

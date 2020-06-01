@@ -1,12 +1,20 @@
 package galih.jfood;
+
+/**
+ * Class yang menghitung harga
+ *
+ * @author Galih Damar Jati
+ * @version 29 Mei 2020
+ */
+
 public class PriceCalculator implements Runnable
 {
     Invoice invoice;
 
     /**
-     * Mengatur value dari variable seller
+     * Mengatur invoice yang akan dihitung harganya
      *
-     * @return Value pada parameter dimasukkan ke variable seller
+     * @param invoice
      */
     public PriceCalculator (Invoice invoice)
     {
@@ -14,9 +22,8 @@ public class PriceCalculator implements Runnable
     }
 
     /**
-     * Mengatur value dari variable seller
+     * Method untuk menjalankan fungsi penghitungan harga
      *
-     * @return Value pada parameter dimasukkan ke variable seller
      */
     public void run ()
     {

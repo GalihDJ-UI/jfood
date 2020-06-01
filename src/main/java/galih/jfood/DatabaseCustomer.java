@@ -6,29 +6,21 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.util.ArrayList;
 
 /**
- * Write a description of class DatabaseCustomer here.
+ * Class database yang menyimpan dan mengatur data pelanggan-pelanggan yang ada
  *
  * @author Galih Damar Jati
  * @version 5-Maret-2019
  */
 public class DatabaseCustomer
 {
-    // instance variables - replace the example below with your own
+
     private static ArrayList<Customer> CUSTOMER_DATABASE = new ArrayList<Customer>();
     private static int lastId = 0;
-    /**
-     * Constructor for objects of class DatabaseCustomer
-     */
-    //public DatabaseCustomer()
-    //{
-        // initialise instance variables
-    //}
-
 
     /**
-     * An example of a method - replace this comment with your own
+     * Method untuk mendapatkan daftar customer
      *
-     * @return the sum of x and y
+     * @return isi variable CUSTOMER_DATABASE
      */
     public static ArrayList<Customer> getCustomerDatabase()
     {
@@ -37,9 +29,9 @@ public class DatabaseCustomer
     }
 
     /**
-     * An example of a method - replace this comment with your own
+     * Method getter untuk mendapatkan id terakhir
      *
-     * @return the sum of x and y
+     * @return isi variabel lastId
      */
     public static int getLastId()
     {
@@ -47,9 +39,8 @@ public class DatabaseCustomer
     }
 
     /**
-     * An example of a method - replace this comment with your own
+     * Method untuk mendapatkan customer berdasarkan idnya
      *
-     * @return the sum of x and y
      */
     public static Customer getCustomerById(int id) throws CustomerNotFoundException
     {
@@ -64,9 +55,8 @@ public class DatabaseCustomer
     }
 
     /**
-     * An example of a method - replace this comment with your own
+     * Method untuk menambahkan data customer
      *
-     * @return the sum of x and y
      */
     public static boolean addCustomer(Customer customer) throws EmailAlreadyExistException
     {
@@ -84,9 +74,8 @@ public class DatabaseCustomer
 
 
     /**
-     * An example of a method - replace this comment with your own
+     * Method untuk menghapus data customer berdasarkan id
      *
-     * @return the sum of x and y
      */
     public static boolean removeCustomer(int id) throws CustomerNotFoundException
     {
@@ -105,13 +94,15 @@ public class DatabaseCustomer
 
 
     /**
-     * An example of a method - replace this comment with your own
+     * Method untuk mendapatkan data customer berdasarkan credentials login
+     * @param email
+     * @param password
      *
-     * @return the sum of x and y
      */
     public static Customer getCustomerLogin(String email, String password)
     {
-        for (Customer customer : CUSTOMER_DATABASE){
+        for (Customer customer : CUSTOMER_DATABASE)
+        {
             if (customer.getEmail().equals(email) && customer.getPassword().equals(password))
             {
                 return customer;

@@ -6,7 +6,6 @@ public class CustomerNotFoundException extends Exception
     /**
      * An example of a method - replace this comment with your own
      *
-     * @return the sum of x and y
      */
     public CustomerNotFoundException (int customer_input)
     {
@@ -15,9 +14,9 @@ public class CustomerNotFoundException extends Exception
     }
 
     /**
-     * An example of a method - replace this comment with your own
+     * Method getter untuk mendapatkan error message
      *
-     * @return the sum of x and y
+     * @return error message
      */
     public String getMessage()
     {

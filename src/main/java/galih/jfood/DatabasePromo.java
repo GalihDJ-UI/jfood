@@ -2,30 +2,31 @@ package galih.jfood;
 import java.util.ArrayList;
 
 /**
- * Write a description of class DatabasePromo here.
+ * Class database yang menyimpan dan mengatur data promo-promo yang ada
  *
  * @author Galih Damar Jati
  * @version 12-03-2020
  */
 public class DatabasePromo {
-    // instance variables - replace the example below with your own
+
     private static ArrayList<Promo> PROMO_DATABASE = new ArrayList<Promo>(0);
     private static int lastId = 0;
 
     /**
-     * Constructor for objects of class DatabasePromo
+     * Method untuk mendapatkan daftar promo
+     *
+     * @return isi variable PROMO_DATABASE
      */
 
     public static ArrayList<Promo> getPromoDatabase()
     {
-        // put your code here
         return PROMO_DATABASE;
     }
 
     /**
-     * An example of a method - replace this comment with your own
+     * Method getter untuk mendapatkan id terakhir
      *
-     * @return the sum of x and y
+     * @return isi variabel lastId
      */
     public static int getLastId()
     {
@@ -33,9 +34,8 @@ public class DatabasePromo {
     }
 
     /**
-     * An example of a method - replace this comment with your own
+     * Method untuk mendapatkan promo berdasarkan id
      *
-     * @return the sum of x and y
      */
     public static Promo getPromoById(int id) throws PromoNotFoundException
     {
@@ -50,9 +50,8 @@ public class DatabasePromo {
     }
 
     /**
-     * An example of a method - replace this comment with your own
+     * Method untuk mendapatkan promo berdasarkan kode promo
      *
-     * @return the sum of x and y
      */
     public static Promo getPromoByCode(String code)
     {
@@ -67,9 +66,8 @@ public class DatabasePromo {
     }
 
     /**
-     * An example of a method - replace this comment with your own
+     * Method untuk menambahkan promo
      *
-     * @return the sum of x and y
      */
     public static boolean addPromo(Promo promo) throws PromoCodeAlreadyExistException
     {
@@ -89,9 +87,8 @@ public class DatabasePromo {
     }
 
     /**
-     * An example of a method - replace this comment with your own
+     * Method untuk mengubah status promo menjadi aktif
      *
-     * @return the sum of x and y
      */
     public static boolean activatePromo(int id)
     {
@@ -107,9 +104,8 @@ public class DatabasePromo {
     }
 
     /**
-     * An example of a method - replace this comment with your own
+     * Method untuk mengubah status promo menjadi tidak aktif
      *
-     * @return the sum of x and y
      */
     public static boolean deactivatePromo(int id)
     {
@@ -126,9 +122,8 @@ public class DatabasePromo {
     }
 
     /**
-     * An example of a method - replace this comment with your own
+     * Method untuk menghapus promo
      *
-     * @return the sum of x and y
      */
     public static boolean removePromo(int id) throws PromoNotFoundException
         {

@@ -1,13 +1,19 @@
 package galih.jfood;
+
+/**
+ * Class exception untuk error handling ketika promo tidak ditemukan
+ *
+ * @author Galih Damar Jati
+ * @version 29 Mei 2020
+ */
 public class PromoNotFoundException extends Exception
 {
     private int promo_error;
 
     /**
-     * Mengatur value dari variable joinDate
+     * Method untuk mendapatkan input yang dibutuhkan untuk parameter error handling
+     * @param promo_input
      *
-     * @param  joinDate dengan tipe data string
-     * @return Value pada parameter dimasukkan ke variable joinDate
      */
     public PromoNotFoundException (int promo_input)
     {
@@ -16,10 +22,9 @@ public class PromoNotFoundException extends Exception
     }
 
     /**
-     * Mengatur value dari variable joinDate
+     * Method untuk mendapatkan error message
      *
-     * @param  joinDate dengan tipe data string
-     * @return Value pada parameter dimasukkan ke variable joinDate
+     * @return error message
      */
     public String getMessage()
     {

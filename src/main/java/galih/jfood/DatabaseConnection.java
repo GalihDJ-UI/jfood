@@ -2,8 +2,19 @@ package galih.jfood;
 
 import java.sql.*;
 
+/**
+ * Class untuk koneksi ke database postgresql
+ *
+ * @author Galih Damar Jati
+ * @version 29 Mei 2020
+ */
+
 public class DatabaseConnection
 {
+    /**
+     * Method untuk inisiasi koneksi ke database
+     *
+     */
     public static Connection connection ()
     {
         Connection c = null;

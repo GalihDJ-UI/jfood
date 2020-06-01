@@ -7,15 +7,30 @@ import java.util.ArrayList;
 @RequestMapping("/food")
 @RestController
 
+/**
+ * Class controller untuk mengatur manipulasi data makanan
+ *
+ * @author Galih Damar Jati
+ * @version 29 Mei 2020
+ */
+
 public class FoodController
 {
     @RequestMapping(value = "", method = RequestMethod.GET)
+    /**
+     * Method untuk mendapatkan semua data makanan
+     *
+     */
     public ArrayList<Food> getAllFood()
     {
         return DatabaseFood.getFoodDatabase();
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    /**
+     * Method untuk mendapatkan data makanan berdasarkan id
+     *
+     */
     public Food getFoodById(@PathVariable int id){
         Food food = null;
         try
@@ -31,6 +46,10 @@ public class FoodController
     }
 
     @RequestMapping(value = "/seller/{sellerId}", method = RequestMethod.GET)
+    /**
+     * Method untuk mendapatkan data makanan berdasarkan penjual
+     *
+     */
     public ArrayList<Food> getFoodBySeller(@PathVariable int sellerId)
     {
         ArrayList<Food> food = null;
@@ -47,6 +66,10 @@ public class FoodController
     }
 
     @RequestMapping(value = "/category/{category}", method = RequestMethod.GET)
+    /**
+     * Method untuk mendapatkan data makanan berdasarkan kategori
+     *
+     */
     public ArrayList<Food> getFoodByCategory(@PathVariable FoodCategory category)
     {
         ArrayList<Food> food = null;
@@ -64,6 +87,10 @@ public class FoodController
     }
 
     @RequestMapping(value = "", method = RequestMethod.POST)
+    /**
+     * Method untuk menambahkan makanan
+     *
+     */
     public Food addFood(@RequestParam(value="name") String name,
                         @RequestParam(value="price") int price,
                         @RequestParam(value="category") FoodCategory category,

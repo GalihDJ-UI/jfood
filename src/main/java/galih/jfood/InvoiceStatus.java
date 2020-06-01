@@ -1,9 +1,9 @@
 package galih.jfood;
 /**
- * Enumeration class InvoiceStatus - write a description of the enum class here
+ * Class enum berisi status-status invoice yang memungkinkan
  *
- * @author (your name here)
- * @version (version number or date here)
+ * @author Galih Damar Jati
+ * @version 29 Mei 2020
  */
 public enum InvoiceStatus
 {
@@ -11,9 +11,9 @@ public enum InvoiceStatus
     private String status;
 
     /**
-     * Mengatur value dari variable seller
+     * Mengatur value dari variable status dengan salah satu status yang dibuat di atas
+     * @param status
      *
-     * @return Value pada parameter dimasukkan ke variable seller
      */
     InvoiceStatus (String status)
     {
@@ -21,7 +21,7 @@ public enum InvoiceStatus
     }
 
     /**
-     * Mengatur value dari variable seller
+     * Method untuk print data status invoice
      *
      * @return isi variable status
      */

@@ -1,12 +1,19 @@
 package galih.jfood;
+
+/**
+ * Class exception untuk error handling ketika makanan tidak ditemukan
+ *
+ * @author Galih Damar Jati
+ * @version 29 Mei 2020
+ */
 public class FoodNotFoundException extends Exception
 {
     private int food_error;
 
     /**
-     * Mengatur value dari variable seller
+     * Method untuk mendapatkan input yang dibutuhkan untuk parameter error handling
+     * @param food_input
      *
-     * @return Value pada parameter dimasukkan ke variable seller
      */
     public FoodNotFoundException (int food_input)
     {
@@ -15,9 +22,9 @@ public class FoodNotFoundException extends Exception
     }
 
     /**
-     * Mengatur value dari variable seller
+     * Method untuk mendapatkan error message
      *
-     * @return Value pada parameter dimasukkan ke variable seller
+     * @return error message
      */
     public String getMessage()
     {

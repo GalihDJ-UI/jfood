@@ -8,15 +8,31 @@ import java.util.ArrayList;
 @RequestMapping("/promo")
 @RestController
 
+
+/**
+ * Class controller untuk mengatur manipulasi data promo
+ *
+ * @author Galih Damar Jati
+ * @version 29 Mei 2020
+ */
+
 public class PromoController
 {
     @RequestMapping(value = "", method = RequestMethod.GET)
+    /**
+     * Method untuk mendapatkan semua promo
+     *
+     */
     public ArrayList<Promo> getAllPromo()
     {
         return DatabasePromo.getPromoDatabase();
     }
 
     @RequestMapping(value = "/{code}", method = RequestMethod.GET)
+    /**
+     * Method untuk mendapatkan promo berdasarkan kode
+     *
+     */
     public Promo getPromoByCode(@PathVariable String code)
     {
         Promo promo = null;
@@ -25,6 +41,10 @@ public class PromoController
     }
 
     @RequestMapping(value = "", method = RequestMethod.POST)
+    /**
+     * Method untuk menambahkan promo
+     *
+     */
     public Promo addPromo(@RequestParam(value="code") String code,
                           @RequestParam(value="discount") int discount,
                           @RequestParam(value="minPrice") int minPrice,

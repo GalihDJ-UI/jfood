@@ -7,19 +7,22 @@ package galih.jfood;
  */
 public class Food
 {
-    // instance variables - replace the example below with your own
     private int id;
     private String name;
     private int price;
     private FoodCategory category;
     private Seller seller;
-    /**
-     * Constructor for objects of class Food
 
+    /**
+     * Constructor untuk object pada class food
+     * @param id
+     * @param name
+     * @param seller
+     * @param price
+     * @param category
      */
     public Food(int id, String name, Seller seller, int price, FoodCategory category)
     {
-        // initialise instance variables
         this.id = id;
         this.name = name;
         this.seller = seller;
@@ -28,51 +31,47 @@ public class Food
     }
 
     /**
-     * Digunakan untuk mendapatkan id makanan
+     * Method getter untuk mendapatkan id makanan
      *
      * @return Isi variable id
      */
     public int getId()
     {
-        // put your code here
         return id;
     }
     
     /**
-     * Digunakan untuk mendapatkan nama makanan
+     * Method getter untuk mendapatkan nama makanan
      *
      * @return Isi variable name
      */
     public String getName()
     {
-        // put your code here
         return name;
     }
     
     /**
-     * Digunakan untuk mendapatkan nama penjual
+     * Method getter untuk mendapatkan nama penjual
      *
      * @return Isi variable seller
      */
     public Seller getSeller()
     {
-        // put your code here
         return seller;
     }
     
     /**
-     * Digunakan untuk mendapatkan harga makanan
+     * Method getter untuk mendapatkan harga makanan
      *
      * @return Isi variable price
      */
     public int getPrice()
     {
-        // put your code here
         return price;
     }
     
     /**
-     * Digunakan untuk mendapatkan kategori makanan
+     * Method getter untuk mendapatkan kategori makanan
      *
      * @return Isi variable category
      */
@@ -83,10 +82,8 @@ public class Food
     }
     
     /**
-     * Mengatur value dari variable id
+     * Method setter untuk mengatur id makanan
      *
-
-     * @return Value pada parameter dimasukkan ke variable id
      */
     public void setId(int id)
     {
@@ -95,10 +92,8 @@ public class Food
     }
     
     /**
-     * Mengatur value dari variable name
+     * Method setter untuk mengatur nama makanan
      *
-
-     * @return Value pada parameter dimasukkan ke variable name
      */
     public void setName(String name)
     {
@@ -107,44 +102,32 @@ public class Food
     }
     
     /**
-     * Mengatur value dari variable seller
+     * Method setter untuk mengatur penjual
      *
-     * @return Value pada parameter dimasukkan ke variable seller
      */
     public void setSeller(Seller seller)
     {
-        // put your code here
         this.seller = seller;
     }
     
     /**
-     * Mengatur value dari variable price
+     * Method setter untuk mengatur harga makanan
      *
-     * @return Value pada parameter dimasukkan ke variable price
      */
     public void setPrice(int price)
     {
-        // put your code here
         this.price = price;
     }
     
     /**
-     * Mengatur value dari variable string
+     * Method setter untuk mengatur kategori makanan
      *
-     * @return Value pada parameter dimasukkan ke variable string
      */
     public void setCategory(FoodCategory category)
     {
-        // put your code here
         this.category = category;
     }
-    
-    /**
-     * Untuk print data variable pada class ini
-     *
 
-    * @return Isi dari variable yang ada. Tergantung pada variable apa yang dipanggil
-    */
     //public void printData()
     //{
     //  System.out.println("=====FOOD=====");  
@@ -157,9 +140,9 @@ public class Food
     //}
 
     /**
-     * Untuk print data variable pada class ini
+     * Method untuk print data makanan
+     * @return data pelanggan berisi id, nama makanan, nama penjual, kota penjual, harga makanan, kategori makanan
      *
-     * @return Isi dari variable yang ada. Tergantung pada variable apa yang dipanggil
      */
     public String toString()
     {

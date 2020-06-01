@@ -3,40 +3,45 @@ import java.util.*;
 import java.util.regex.*; 
 import java.text.*;
 /**
- * Write a description of class CashInvoice here.
+ * Class yang menyimpan dan mengatur data yang dibutuhkan untuk cash invoice
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Galih Damar Jati
+ * @version 29 Mei 2020
  */
-public class CashInvoice extends Invoice {
-    // instance variables - replace the example below with your own
+public class CashInvoice extends Invoice
+{
     private static final PaymentType PAYMENT_TYPE = PaymentType.Cash;
     private int deliveryFee = 5000;
 
     /**
-     * Constructor for objects of class CashInvoice
+     * Constructor object class CashInvoice tanpa deliveryFee
+     * @param id
+     * @param foods
+     * @param customer
      */
     public CashInvoice(int id, ArrayList<Food> foods, Customer customer)
     {
-        // initialise instance variables
         super(id, foods, customer);
     }
 
     /**
-     * Constructor for objects of class CashInvoice
+     * Constructor object class CashInvoice dengan deliveryFee
+     * @param id
+     * @param foods
+     * @param customer
+     * @param deliveryFee
+     *
      */
     public CashInvoice(int id, ArrayList<Food> foods, Customer customer, int deliveryFee)
     {
-        // initialise instance variables
         super(id, foods, customer);
         this.deliveryFee = deliveryFee;
     }
 
     /**
-     * An example of a method - replace this comment with your own
+     * Method getter untuk mengambil tipe pembayaran
      *
-
-     * @return the sum of x and y
+     * @return isi variable PAYMENT_TYPE
      */
     public PaymentType getPaymentType()
     {
@@ -45,9 +50,9 @@ public class CashInvoice extends Invoice {
     }
 
     /**
-     * An example of a method - replace this comment with your own
+     * Method getter ntuk mendapatkan delivery fee
      *
-     * @return the sum of x and y
+     * @return isi variable delivery fee
      */
     public int getDeliveryFee()
     {
@@ -56,9 +61,8 @@ public class CashInvoice extends Invoice {
     }
 
     /**
-     * An example of a method - replace this comment with your own
+     * Method setter untuk mengatur value variable delivery fee
      *
-     * @return the sum of x and y
      */
     public void setDeliveryFee(int deliveryFee)
     {
@@ -67,9 +71,8 @@ public class CashInvoice extends Invoice {
     }
 
     /**
-     * An example of a method - replace this comment with your own
+     * Method setter untuk mengatur harga total
      *
-     * @return the sum of x and y
      */
     public void setTotalPrice()
     {
@@ -95,9 +98,9 @@ public class CashInvoice extends Invoice {
     //}
 
     /**
-     * An example of a method - replace this comment with your own
+     * Method untuk print data cash invoice
      *
-     * @return the sum of x and y
+     * @return isi variable string yang berisi invoice transaksi cash
      */
     public String toString()
     {

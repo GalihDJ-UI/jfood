@@ -1,6 +1,6 @@
 package galih.jfood;
 /**
- * Enumeration class PaymentType - write a description of the enum class here
+ * Class enum berisi metode pembayaran yang memungkinkan
  *
  * @author Galih Damar Jati
  * @version 5-Maret-2019
@@ -11,23 +11,23 @@ public enum PaymentType
     private String type;
 
     /**
-     * Mengatur value dari variable seller
+     *  Mengatur value dari variable type dengan salah satu metode pembayaran yang dibuat pada enum di atas
+     * @param type
      *
-     * @return Value pada parameter dimasukkan ke variable seller
      */
     PaymentType (String type)
     {
-     this.type = type;
+        this.type = type;
     }
 
     /**
-     * Mengatur value dari variable seller
+     * Method untuk print data metode pembayaran
      *
      * @return isi variable type
      */
     public String toString()
     {
-    return type;
+        return type;
     }
 }
 
