@@ -84,7 +84,6 @@ public class DatabaseCustomerPostgre
 
         catch (SQLException e)
         {
-            e.printStackTrace();
             System.err.println(e.getClass().getName()+": "+e.getMessage());
             System.exit(0);
         }
@@ -121,7 +120,6 @@ public class DatabaseCustomerPostgre
 
         catch (SQLException e)
         {
-            e.printStackTrace();
             System.err.println(e.getClass().getName()+": "+e.getMessage());
             System.exit(0);
         }
@@ -147,7 +145,6 @@ public class DatabaseCustomerPostgre
 
         catch (Exception e)
         {
-            e.printStackTrace();
             System.err.println(e.getClass().getName()+": "+e.getMessage());
             System.exit(0);
         }
@@ -187,10 +184,8 @@ public class DatabaseCustomerPostgre
 
         catch (SQLException e)
         {
-            e.printStackTrace();
             System.err.println(e.getClass().getName()+": "+e.getMessage());
             System.exit(0);
-            return null;
         }
         return value;
     }
@@ -227,7 +222,6 @@ public class DatabaseCustomerPostgre
 
         catch (SQLException e)
         {
-            e.printStackTrace();
             System.err.println(e.getClass().getName()+": "+e.getMessage());
             System.exit(0);
         }
