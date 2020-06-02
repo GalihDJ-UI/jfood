@@ -1,6 +1,6 @@
 package galih.jfood;
 /**
- * Menyimpan data makanan beserta kategori, harga, dan penjualnya.
+ * Class yang menyimpan dan mengatur data makanan
  *
  * @author Galih Damar Jati
  * @version (27 Feb 2020)
@@ -77,32 +77,32 @@ public class Food
      */
     public FoodCategory getCategory()
     {
-        // put your code here
         return category;
     }
     
     /**
      * Method setter untuk mengatur id makanan
+     * @param id
      *
      */
     public void setId(int id)
     {
-        // put your code here
         this.id = id;
     }
     
     /**
      * Method setter untuk mengatur nama makanan
+     * @param name
      *
      */
     public void setName(String name)
     {
-        // put your code here
         this.name = name;
     }
     
     /**
      * Method setter untuk mengatur penjual
+     * @param seller
      *
      */
     public void setSeller(Seller seller)
@@ -112,6 +112,7 @@ public class Food
     
     /**
      * Method setter untuk mengatur harga makanan
+     * @param price
      *
      */
     public void setPrice(int price)
@@ -121,6 +122,7 @@ public class Food
     
     /**
      * Method setter untuk mengatur kategori makanan
+     * @param category
      *
      */
     public void setCategory(FoodCategory category)

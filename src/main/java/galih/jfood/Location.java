@@ -56,7 +56,7 @@ public class Location
     
     /**
      * Method setter untuk mengatur nama provinsi
-     * @param  province dengan tipe data string
+     * @param  province
      *
      */
     public void setProvince(String province)
